@@ -135,9 +135,10 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:onClick="resetScore"
         android:layout_marginBottom="32dp"
-        android:text="@string/reset" />
+        android:onClick="resetScore"
+        android:text="@string/reset"
+        android:background="@color/colorRed"/>
 
 </RelativeLayout>
 
