@@ -45,7 +45,8 @@
                 android:layout_marginLeft="24dp"
                 android:layout_marginRight="24dp"
                 android:onClick="addThreeForTeamA"
-                android:text="@string/_3_points" />
+                android:text="@string/_3_points"
+                android:textColor="#ffffff"/>
 
             <Button
                 android:layout_width="match_parent"
@@ -54,7 +55,8 @@
                 android:layout_marginLeft="24dp"
                 android:layout_marginRight="24dp"
                 android:onClick="addTwoForTeamA"
-                android:text="@string/_2_points" />
+                android:text="@string/_2_points"
+                android:textColor="#ffffff"/>
 
             <Button
                 android:layout_width="match_parent"
@@ -63,7 +65,8 @@
                 android:layout_marginLeft="24dp"
                 android:layout_marginRight="24dp"
                 android:onClick="addOneForTeamA"
-                android:text="@string/free_throw" />
+                android:text="@string/free_throw"
+                android:textColor="#ffffff"/>
         </LinearLayout>
 
         <View
@@ -107,7 +110,8 @@
                 android:layout_marginLeft="24dp"
                 android:layout_marginRight="24dp"
                 android:onClick="addThreeForTeamB"
-                android:text="@string/_3_points" />
+                android:text="@string/_3_points"
+                android:textColor="#ffffff"/>
 
             <Button
                 android:layout_width="match_parent"
@@ -116,7 +120,8 @@
                 android:layout_marginLeft="24dp"
                 android:layout_marginRight="24dp"
                 android:onClick="addTwoForTeamB"
-                android:text="@string/_2_points" />
+                android:text="@string/_2_points"
+                android:textColor="#ffffff"/>
 
             <Button
                 android:layout_width="match_parent"
@@ -125,20 +130,52 @@
                 android:layout_marginLeft="24dp"
                 android:layout_marginRight="24dp"
                 android:onClick="addOneForTeamB"
-                android:text="@string/free_throw" />
+                android:text="@string/free_throw"
+                android:textColor="#ffffff"/>
 
         </LinearLayout>
     </LinearLayout>
 
+    <TextView
+        android:id="@+id/team_winner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="116dp"
+        android:textSize="26sp"
+        android:padding="12dp"
+        android:textAlignment="center"
+        android:layout_marginLeft="64dp"
+        android:layout_marginRight="64dp"
+        android:textColor="@color/colorGreen"
+        android:visibility="invisible"
+        style="@style/Widget.AppCompat.Button.Borderless.Colored"
+        />
+
     <Button
-        android:layout_width="wrap_content"
+        style="@style/Widget.AppCompat.Button"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="32dp"
+        android:layout_marginBottom="62dp"
+        android:layout_marginLeft="26dp"
+        android:layout_marginRight="26dp"
+        android:onClick="winner"
+        android:text="@string/winner"
+        android:textColor="#ffffff" />
+    <Button
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="16dp"
+        android:layout_marginLeft="26dp"
+        android:layout_marginRight="26dp"
         android:onClick="resetScore"
         android:text="@string/reset"
-        android:background="@color/colorRed"/>
+        android:textColor="#ffffff" />
 
 </RelativeLayout>
 

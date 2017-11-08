@@ -71,6 +71,23 @@ public class MainActivity extends AppCompatActivity {
         scoreTeamB = 0;
         displayForTeamA(scoreTeamA);
         displayForTeamB(scoreTeamB);
+        findViewById(R.id.team_winner).setVisibility(View.INVISIBLE);
+    }
+
+    public void winner (View v){
+        TextView winnerTeam = (TextView) findViewById(R.id.team_winner);
+        if (scoreTeamB > scoreTeamA) {
+            winnerTeam.setText(R.string.teamB_wins);
+            findViewById(R.id.team_winner).setVisibility(View.VISIBLE);
+        }
+        if (scoreTeamB < scoreTeamA) {
+            winnerTeam.setText(R.string.teamA_wins);
+            findViewById(R.id.team_winner).setVisibility(View.VISIBLE);
+        }
+        if (scoreTeamA == scoreTeamB) {
+            winnerTeam.setText(R.string.draw);
+            findViewById(R.id.team_winner).setVisibility(View.VISIBLE);
+        }
     }
 
     public void displayForTeamA(int score) {
@@ -82,4 +99,5 @@ public class MainActivity extends AppCompatActivity {
         TextView scoreView = (TextView) findViewById(R.id.team_b_score);
         scoreView.setText(String.valueOf(score));
     }
+
 }
