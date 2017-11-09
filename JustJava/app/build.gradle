@@ -1,4 +1,7 @@
 apply plugin: 'com.android.application'
+apply plugin: com.udacity.AssessmentPlugin
+ext.emailAddress = "Podliza123@gmail.com"
+ext.projectID = "JustJava"
 
 android {
     compileSdkVersion 26
