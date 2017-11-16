@@ -11,8 +11,13 @@ public class MainActivity extends AppCompatActivity {
     int scoreTeamA = 0;
     int scoreTeamB = 0;
 
-    EditText nameTeamA = null;
-    EditText nameTeamB = null;
+    EditText nameTeamA;
+    EditText nameTeamB;
+
+    String nameA;
+    String nameB;
+
+    TextView winnerTeam;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,25 +64,30 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void winner (View v){
-        TextView winnerTeam = (TextView) findViewById(R.id.team_winner);
-
         nameTeamA = findViewById(R.id.name_team_a);
         nameTeamB = findViewById(R.id.name_team_b);
 
-        String nameA = String.valueOf(nameTeamA.getText());
-        String nameB = String.valueOf(nameTeamB.getText());
+        nameA = String.valueOf(nameTeamA.getText());
+        nameB = String.valueOf(nameTeamB.getText());
 
         if (scoreTeamB > scoreTeamA) {
-            winnerTeam.setText("Team " + nameB + " win!");
-            findViewById(R.id.team_winner).setVisibility(View.VISIBLE);
+            if(!nameB.isEmpty())
+                winnerTeam("TEAM " + nameB + " WIN");
+            else {
+                winnerTeam("TEAM B WIN");
+            }
         }
-        if (scoreTeamB < scoreTeamA) {
-            winnerTeam.setText("Team " + nameA + " win!");
-            findViewById(R.id.team_winner).setVisibility(View.VISIBLE);
+
+        else if (scoreTeamB < scoreTeamA) {
+            if(!nameA.isEmpty())
+                winnerTeam("TEAM " + nameA + " WIN");
+            else {
+                winnerTeam("TEAM A WIN");
+            }
         }
-        if (scoreTeamA == scoreTeamB) {
-            winnerTeam.setText(R.string.draw);
-            findViewById(R.id.team_winner).setVisibility(View.VISIBLE);
+
+        else if (scoreTeamA == scoreTeamB) {
+            winnerTeam("DRAW");
         }
     }
 
@@ -89,6 +99,12 @@ public class MainActivity extends AppCompatActivity {
     public void displayForTeamB(int score) {
         TextView scoreView = (TextView) findViewById(R.id.team_b_score);
         scoreView.setText(String.valueOf(score));
+    }
+
+    public void winnerTeam(String team_name) {
+        winnerTeam = (TextView) findViewById(R.id.team_winner);
+        winnerTeam.setText(team_name);
+        findViewById(R.id.team_winner).setVisibility(View.VISIBLE);
     }
 
 
