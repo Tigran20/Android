@@ -18,9 +18,6 @@ public class MainActivity extends AppCompatActivity {
     EditText mMathGrade;
     EditText mHistoryGrade;
 
-    String nr = "NR";
-    String nameEnter = "Enter your name!";
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,47 +26,28 @@ public class MainActivity extends AppCompatActivity {
 
     public void setName() {
         nameUser = (EditText) findViewById(R.id.name_user);
-        if(name != null){
-            name = String.valueOf(nameUser.getText());
-        }
-        else {
-            name = nameEnter;
-        }
+        name = String.valueOf(nameUser.getText());
+
+
 
     }
 
     public void setChemistryGrade() {
         mChemistryGrade = (EditText) findViewById(R.id.chemistry_grade);
-
-        if(chemistryGrade != null){
-            chemistryGrade = String.valueOf(mChemistryGrade.getText());
-        }
-        else {
-            chemistryGrade = nr;
-        }
+        chemistryGrade = String.valueOf(mChemistryGrade.getText());
 
     }
 
     public void setMathGrade(){
         mMathGrade = (EditText) findViewById(R.id.math_grade);
+        mathGrade = String.valueOf(mMathGrade.getText());
 
-        if(mathGrade != null) {
-            mathGrade = String.valueOf(mMathGrade.getText());
-        }
-        else {
-            mathGrade = nr;
-        }
     }
 
     public void setHistoryGrade() {
         mHistoryGrade = (EditText) findViewById(R.id.history_grade);
+        historyGrade = String.valueOf(mHistoryGrade.getText());
 
-        if(historyGrade != null){
-            historyGrade = String.valueOf(mHistoryGrade.getText());
-        }
-        else {
-            historyGrade = nr;
-        }
     }
 
     public void displayGrades(View v) {
