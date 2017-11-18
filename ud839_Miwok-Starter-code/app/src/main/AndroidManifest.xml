@@ -11,7 +11,7 @@
      limitations under the License.
 -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.android.miwok">
+    package="com.tigran.android.miwok">
 
     <application
         android:allowBackup="true"
@@ -20,7 +20,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".MainActivity">
+        <activity android:name="com.tigran.android.miwok.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -28,16 +28,16 @@
         </activity>
 
         <activity
-            android:name=".NumbersActivity"
+            android:name="com.tigran.android.miwok.NumbersActivity"
             android:label="@string/category_numbers" />
         <activity
-            android:name=".FamilyActivity"
+            android:name="com.tigran.android.miwok.FamilyActivity"
             android:label="@string/category_family" />
         <activity
-            android:name=".ColorsActivity"
+            android:name="com.tigran.android.miwok.ColorsActivity"
             android:label="@string/category_colors" />
         <activity
-            android:name=".PhrasesActivity"
+            android:name="com.tigran.android.miwok.PhrasesActivity"
             android:label="@string/category_phrases" />
 
     </application>
