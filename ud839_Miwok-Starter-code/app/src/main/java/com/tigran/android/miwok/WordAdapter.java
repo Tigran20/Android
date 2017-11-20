@@ -26,7 +26,7 @@ public class WordAdapter extends ArrayAdapter<Word> {
 
         View listItemView = convertView;
 
-        if(listItemView == null) {
+        if (listItemView == null) {
             listItemView = LayoutInflater.from(getContext()).inflate(
                     R.layout.list_item, parent, false);
         }
@@ -35,11 +35,10 @@ public class WordAdapter extends ArrayAdapter<Word> {
 
         ImageView imageView = (ImageView) listItemView.findViewById(R.id.image);
 
-        if(currentWord.hasImage()) {
+        if (currentWord.hasImage()) {
             imageView.setImageResource(currentWord.getImageResourceId());
             imageView.setVisibility(View.VISIBLE);
-        }
-        else {
+        } else {
             imageView.setVisibility(View.GONE);
         }
 
