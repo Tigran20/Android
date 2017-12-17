@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     Button answer3;
     Button answer4;
 
+
     TextView question;
     TextView score;
 
@@ -51,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
                     score.setText("Score: " + mScore);
                     updateQuestion();
 
-                    if (mScore == 4) {
+                    if (mScore == 10) {
                         gameWin();
                     }
                 }
@@ -69,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
                     mScore++;
                     score.setText("Score: " + mScore);
                     updateQuestion();
-                    if (mScore == 4) {
+                    if (mScore == 10) {
                         gameWin();
                     }
                 }
@@ -87,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
                     mScore++;
                     score.setText("Score: " + mScore);
                     updateQuestion();
-                    if (mScore == 4) {
+                    if (mScore == 10) {
                         gameWin();
                     }
                 }
@@ -104,7 +105,7 @@ public class MainActivity extends AppCompatActivity {
                     mScore++;
                     score.setText("Score: " + mScore);
                     updateQuestion();
-                    if (mScore == 4) {
+                    if (mScore == 10) {
                         gameWin();
                     }
                 }
