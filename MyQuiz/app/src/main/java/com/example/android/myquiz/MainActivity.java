@@ -191,8 +191,7 @@ public class MainActivity extends AppCompatActivity {
     public void onBackPressed() {
         AlertDialog.Builder alertDB_exit = new AlertDialog.Builder(MainActivity.this);
         alertDB_exit
-                .setMessage("Do you really want to quit? ?")
-                .setCancelable(false)
+                .setMessage("Do you really want to quit ?")
 
                 .setNegativeButton("Yes",
                         new DialogInterface.OnClickListener() {
