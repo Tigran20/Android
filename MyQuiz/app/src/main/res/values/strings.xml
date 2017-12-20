@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MyQuiz</string>
+    <string name="app_name">SpaceQuiz</string>
     <string name="score_0">Score: 0</string>
     <string name="button">Button</string>
 </resources>
