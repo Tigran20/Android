@@ -2,11 +2,13 @@ package com.example.android.myquiz;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import java.util.Random;
@@ -18,15 +20,16 @@ public class MainActivity extends AppCompatActivity {
     Button answer3;
     Button answer4;
 
-
     TextView question;
     TextView score;
+    EditText editText;
 
     private Questions questions = new Questions();
 
     private String answer;
     private int mScore = 0;
     private int questionNumber = 0;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,11 +46,10 @@ public class MainActivity extends AppCompatActivity {
 
         updateQuestion();
 
-
         answer1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(answer1.getText() == answer) {
+                if (answer1.getText() == answer) {
                     mScore++;
                     score.setText("Score: " + mScore);
                     updateQuestion();
@@ -55,9 +57,7 @@ public class MainActivity extends AppCompatActivity {
                     if (mScore == 10) {
                         gameWin();
                     }
-                }
-
-                else {
+                } else {
                     gameOver();
                 }
             }
@@ -66,16 +66,14 @@ public class MainActivity extends AppCompatActivity {
         answer2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(answer2.getText() == answer) {
+                if (answer2.getText() == answer) {
                     mScore++;
                     score.setText("Score: " + mScore);
                     updateQuestion();
                     if (mScore == 10) {
                         gameWin();
                     }
-                }
-
-                else {
+                } else {
                     gameOver();
                 }
             }
@@ -84,15 +82,14 @@ public class MainActivity extends AppCompatActivity {
         answer3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(answer3.getText() == answer) {
+                if (answer3.getText() == answer) {
                     mScore++;
                     score.setText("Score: " + mScore);
                     updateQuestion();
                     if (mScore == 10) {
                         gameWin();
                     }
-                }
-                else {
+                } else {
                     gameOver();
                 }
             }
@@ -101,15 +98,14 @@ public class MainActivity extends AppCompatActivity {
         answer4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(answer4.getText() == answer) {
+                if (answer4.getText() == answer) {
                     mScore++;
                     score.setText("Score: " + mScore);
                     updateQuestion();
                     if (mScore == 10) {
                         gameWin();
                     }
-                }
-                else {
+                } else {
                     gameOver();
                 }
             }
@@ -152,6 +148,11 @@ public class MainActivity extends AppCompatActivity {
         AlertDialog alertDialog = alertDB.create();
         alertDialog.show();
 
+        Button p = alertDialog.getButton(DialogInterface.BUTTON_POSITIVE);
+        p.setTextColor(Color.BLACK);
+
+        Button n = alertDialog.getButton(DialogInterface.BUTTON_NEGATIVE);
+        n.setTextColor(Color.BLACK);
     }
 
     private void gameWin() {
@@ -173,9 +174,53 @@ public class MainActivity extends AppCompatActivity {
                             public void onClick(DialogInterface dialog, int which) {
                                 startActivity(new Intent(getApplicationContext(), MainActivity.class));
                             }
+
                         });
 
         AlertDialog alertDialog = alertDB.create();
         alertDialog.show();
+
+        Button p = alertDialog.getButton(DialogInterface.BUTTON_POSITIVE);
+        p.setTextColor(Color.BLACK);
+
+        Button n = alertDialog.getButton(DialogInterface.BUTTON_NEGATIVE);
+        n.setTextColor(Color.BLACK);
     }
+
+    @Override
+    public void onBackPressed() {
+        AlertDialog.Builder alertDB_exit = new AlertDialog.Builder(MainActivity.this);
+        alertDB_exit
+                .setMessage("Do you really want to quit? ?")
+                .setCancelable(false)
+
+                .setNegativeButton("Yes",
+                        new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                finish();
+                            }
+                        })
+
+                .setPositiveButton("No",
+                        new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                return;
+                            }
+
+                        });
+
+        AlertDialog alertDialog_exit = alertDB_exit.create();
+        alertDialog_exit.show();
+
+        Button p = alertDialog_exit.getButton(DialogInterface.BUTTON_POSITIVE);
+        p.setTextColor(Color.BLACK);
+
+        Button n = alertDialog_exit.getButton(DialogInterface.BUTTON_NEGATIVE);
+        n.setTextColor(Color.BLACK);
+    }
+
+
+
 }

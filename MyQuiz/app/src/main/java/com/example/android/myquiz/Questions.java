@@ -13,7 +13,7 @@ public class Questions {
             "Which planet is tilted on its side?" ,
             "What is the third planet from the sun ?",
             "Which planet has the fastest winds in the solar system? ?",
-            "Which planet has the shortest day and how long is it?",
+            "Which planet has the shortest day ?",
             ""
     };
 
