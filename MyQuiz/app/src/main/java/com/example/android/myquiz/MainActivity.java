@@ -22,7 +22,6 @@ public class MainActivity extends AppCompatActivity {
 
     TextView question;
     TextView score;
-    EditText editText;
 
     private Questions questions = new Questions();
 
@@ -110,7 +109,6 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-
     }
 
     private void updateQuestion() {
@@ -197,7 +195,7 @@ public class MainActivity extends AppCompatActivity {
                         new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
-                                finish();
+                                onDestroy();
                             }
                         })
 
@@ -207,7 +205,6 @@ public class MainActivity extends AppCompatActivity {
                             public void onClick(DialogInterface dialog, int which) {
                                 return;
                             }
-
                         });
 
         AlertDialog alertDialog_exit = alertDB_exit.create();
@@ -220,6 +217,12 @@ public class MainActivity extends AppCompatActivity {
         n.setTextColor(Color.BLACK);
     }
 
+    public void onDestroy() {
+        moveTaskToBack(true);
 
+        super.onDestroy();
 
+        System.runFinalizersOnExit(true);
+        System.exit(0);
+    }
 }
