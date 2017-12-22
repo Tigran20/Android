@@ -1,5 +1,6 @@
 package com.example.android.myquiz;
 
+import android.app.ActionBar;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
@@ -132,7 +133,7 @@ public class MainActivity extends AppCompatActivity {
                         new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
-                                finish();
+                                exit();
                             }
                         })
                 .setPositiveButton("NEW GAME",
@@ -163,7 +164,7 @@ public class MainActivity extends AppCompatActivity {
                         new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
-                                finish();
+                                exit();
                             }
                         })
                 .setPositiveButton("NEW GAME",
@@ -195,7 +196,7 @@ public class MainActivity extends AppCompatActivity {
                         new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
-                                onDestroy();
+                                exit();
                             }
                         })
 
@@ -217,12 +218,10 @@ public class MainActivity extends AppCompatActivity {
         n.setTextColor(Color.BLACK);
     }
 
-    public void onDestroy() {
-        moveTaskToBack(true);
-
-        super.onDestroy();
-
-        System.runFinalizersOnExit(true);
-        System.exit(0);
+    public void exit() {
+        Intent a = new Intent(Intent.ACTION_MAIN);
+        a.addCategory(Intent.CATEGORY_HOME);
+        a.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(a);
     }
 }
