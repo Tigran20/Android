@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SpaceQuiz</string>
+    <string name="score">Счет:</string>
+    <string name="score_0">Счет: 0</string>
+    <string name="button">Кнопка</string>
+
+    <string name="first_question">Шестая планета Солнечной системы ?</string>
+    <string name="game_over">"Игра окончена! "</string>
+    <string name="your_score">"Ваш счет "</string>
+    <string name="points">очк.</string>
+    <string name="exit">ВЫХОД</string>
+    <string name="new_game">НОВАЯ ИГРА</string>
+    <string name="game_win">"Победа! "</string>
+    <string name="yes">Да</string>
+    <string name="no">Нет</string>
+    <string name="exit_question">Вы действительно хотите выйти ?</string>
+</resources>

@@ -146,17 +146,18 @@ public class MainActivity extends AppCompatActivity {
     private void gameOver() {
         AlertDialog.Builder alertDB = new AlertDialog.Builder(MainActivity.this);
         alertDB
-                .setMessage("Game over! Your score is " + mScore + " points")
+                .setMessage(getString(R.string.game_over) + getString(R.string.your_score) + mScore + " " + getString(R.string.points))
+
                 .setCancelable(false)
 
-                .setNegativeButton("EXIT",
+                .setNegativeButton(R.string.exit,
                         new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
                                 exit();
                             }
                         })
-                .setPositiveButton("NEW GAME",
+                .setPositiveButton(R.string.new_game,
                         new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
@@ -177,17 +178,17 @@ public class MainActivity extends AppCompatActivity {
     private void gameWin() {
         AlertDialog.Builder alertDB = new AlertDialog.Builder(MainActivity.this);
         alertDB
-                .setMessage("You win! Your score is " + mScore + " points")
+                .setMessage(getString(R.string.game_win) + getString(R.string.your_score) + mScore + " " + getString(R.string.points))
                 .setCancelable(false)
 
-                .setNegativeButton("EXIT",
+                .setNegativeButton(R.string.exit,
                         new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
                                 exit();
                             }
                         })
-                .setPositiveButton("NEW GAME",
+                .setPositiveButton(R.string.new_game,
                         new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
@@ -210,9 +211,9 @@ public class MainActivity extends AppCompatActivity {
     public void onBackPressed() {
         AlertDialog.Builder alertDB_exit = new AlertDialog.Builder(MainActivity.this);
         alertDB_exit
-                .setMessage("Do you really want to quit ?")
+                .setMessage(R.string.exit_question)
 
-                .setNegativeButton("Yes",
+                .setNegativeButton(R.string.yes,
                         new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
@@ -220,7 +221,7 @@ public class MainActivity extends AppCompatActivity {
                             }
                         })
 
-                .setPositiveButton("No",
+                .setPositiveButton(R.string.no,
                         new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {

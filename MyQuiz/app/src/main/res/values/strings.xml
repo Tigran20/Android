@@ -1,7 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">SpaceQuiz</string>
     <string name="score_0">Score: 0</string>
     <string name="button">Button</string>
     <string name="score">Score:</string>
+
+    <string name="first_question">What is the sixth planet from the sun ?</string>
+    <string name="game_over">Game over!</string>
+    <string name="game_win">Game win!</string>
+    <string name="your_score">Your score is </string>
+    <string name="points"> points </string>
+    <string name="exit">EXIT</string>
+    <string name="new_game">NEW_GAME</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="exit_question">Do you really want to quit ?</string>
 
 </resources>
