@@ -1,6 +1,5 @@
 package com.example.android.myquiz;
 
-import android.app.ActionBar;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
@@ -9,9 +8,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.List;
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
@@ -21,40 +23,40 @@ public class MainActivity extends AppCompatActivity {
     Button answer3;
     Button answer4;
 
-    TextView question;
+    TextView mQuestionView;
     TextView score;
 
-    private Questions questions = new Questions();
+    private Questions mQuestions = new Questions();
 
-    private String answer;
+    private String mAnswer;
     private int mScore = 0;
-    private int questionNumber = 0;
-
+    private int mQuestionNumber = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        score = (TextView) findViewById(R.id.score);
+        mQuestionView = (TextView) findViewById(R.id.question);
+
         answer1 = (Button) findViewById(R.id.answer_1);
         answer2 = (Button) findViewById(R.id.answer_2);
         answer3 = (Button) findViewById(R.id.answer_3);
         answer4 = (Button) findViewById(R.id.answer_4);
-
-        score = (TextView) findViewById(R.id.score);
-        question = (TextView) findViewById(R.id.question);
 
         updateQuestion();
 
         answer1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (answer1.getText() == answer) {
+                if (answer1.getText() == mAnswer) {
                     mScore++;
-                    score.setText("Score: " + mScore);
+                    updateScore(mScore);
                     updateQuestion();
 
                     if (mScore == 10) {
+                        hideItems();
                         gameWin();
                     }
                 } else {
@@ -66,11 +68,12 @@ public class MainActivity extends AppCompatActivity {
         answer2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (answer2.getText() == answer) {
+                if (answer2.getText() == mAnswer) {
                     mScore++;
-                    score.setText("Score: " + mScore);
+                    updateScore(mScore);
                     updateQuestion();
                     if (mScore == 10) {
+                        hideItems();
                         gameWin();
                     }
                 } else {
@@ -82,11 +85,12 @@ public class MainActivity extends AppCompatActivity {
         answer3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (answer3.getText() == answer) {
+                if (answer3.getText() == mAnswer) {
                     mScore++;
-                    score.setText("Score: " + mScore);
+                    updateScore(mScore);
                     updateQuestion();
                     if (mScore == 10) {
+                        hideItems();
                         gameWin();
                     }
                 } else {
@@ -98,11 +102,12 @@ public class MainActivity extends AppCompatActivity {
         answer4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (answer4.getText() == answer) {
+                if (answer4.getText() == mAnswer) {
                     mScore++;
-                    score.setText("Score: " + mScore);
+                    updateScore(mScore);
                     updateQuestion();
                     if (mScore == 10) {
+                        hideItems();
                         gameWin();
                     }
                 } else {
@@ -113,14 +118,29 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void updateQuestion() {
-        question.setText(questions.getQuestion(questionNumber));
-        answer1.setText(questions.getChoice1(questionNumber));
-        answer2.setText(questions.getChoice2(questionNumber));
-        answer3.setText(questions.getChoice3(questionNumber));
-        answer4.setText(questions.getChoice4(questionNumber));
+        if (mQuestionNumber < mQuestions.getLength()) {
+            mQuestionView.setText(mQuestions.getQuestion(mQuestionNumber));
+            answer1.setText(mQuestions.getChoice1(mQuestionNumber));
+            answer2.setText(mQuestions.getChoice2(mQuestionNumber));
+            answer3.setText(mQuestions.getChoice3(mQuestionNumber));
+            answer4.setText(mQuestions.getChoice4(mQuestionNumber));
 
-        answer = questions.getAnswer(questionNumber);
-        questionNumber++;
+            mAnswer = mQuestions.getCorrectAnswer(mQuestionNumber);
+            mQuestionNumber++;
+        }
+    }
+
+    private void hideItems() {
+        mQuestionView.setVisibility(View.INVISIBLE);
+        score.setVisibility(View.INVISIBLE);
+        answer1.setVisibility(View.INVISIBLE);
+        answer2.setVisibility(View.INVISIBLE);
+        answer3.setVisibility(View.INVISIBLE);
+        answer4.setVisibility(View.INVISIBLE);
+    }
+
+    private void updateScore(int point) {
+        score.setText(getString(R.string.score) + mScore);
     }
 
     private void gameOver() {
