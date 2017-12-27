@@ -1,0 +1,7 @@
+<resources>
+    <string-array name="answers">
+        <item>@string/answer_1</item>
+        <item>@string/answer_2</item>
+    </string-array>
+
+</resources>

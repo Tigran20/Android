@@ -17,6 +17,9 @@ import java.util.List;
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
+    //    private String[] questions = getResources().getStringArray(R.array.questions);
+    //    private String[] answers = getResources().getStringArray(R.array.answers);
+    //    private String[] variety = getResources().getStringArray(R.array.variety);
 
     Button answer1;
     Button answer2;
@@ -130,6 +133,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+
     private void hideItems() {
         mQuestionView.setVisibility(View.INVISIBLE);
         score.setVisibility(View.INVISIBLE);
@@ -146,7 +150,7 @@ public class MainActivity extends AppCompatActivity {
     private void gameOver() {
         AlertDialog.Builder alertDB = new AlertDialog.Builder(MainActivity.this);
         alertDB
-                .setMessage(getString(R.string.game_over) + getString(R.string.your_score) + mScore + " " + getString(R.string.points))
+                .setMessage(getString(R.string.game_over) + getString(R.string.your_score) + "" + mScore + " " + getString(R.string.points))
 
                 .setCancelable(false)
 

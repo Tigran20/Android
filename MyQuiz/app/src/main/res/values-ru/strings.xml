@@ -5,14 +5,20 @@
     <string name="score_0">Счет: 0</string>
     <string name="button">Кнопка</string>
 
-    <string name="first_question">Шестая планета Солнечной системы ?</string>
+    <string name="question_1">Шестая планета Солнечной системы ?</string>
+    <string name="question_2">Первый искусственный спутник ?</string>
+
+    <string name="answer_1">Сатурн</string>
+    <string name="answer_2">Спутник I</string>
+
     <string name="game_over">"Игра окончена! "</string>
     <string name="your_score">"Ваш счет "</string>
     <string name="points">очк.</string>
-    <string name="exit">ВЫХОД</string>
-    <string name="new_game">НОВАЯ ИГРА</string>
+    <string name="exit">Выход</string>
+    <string name="new_game">Новая игра</string>
     <string name="game_win">"Победа! "</string>
     <string name="yes">Да</string>
     <string name="no">Нет</string>
     <string name="exit_question">Вы действительно хотите выйти ?</string>
+    <string name="variety_1">[ Сатурн | Марс | Венера | Плутон ]</string>
 </resources>

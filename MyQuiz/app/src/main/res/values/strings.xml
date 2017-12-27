@@ -5,13 +5,24 @@
     <string name="button">Button</string>
     <string name="score">Score:</string>
 
-    <string name="first_question">What is the sixth planet from the sun ?</string>
-    <string name="game_over">Game over!</string>
-    <string name="game_win">Game win!</string>
-    <string name="your_score">Your score is </string>
+    <string name="question_1">What is the sixth planet from the sun ?</string>
+    <string name="question_2">The first satellite in space ?</string>
+
+
+    <string name="answer_1">Saturn</string>
+    <string name="answer_2">Sputnik I</string>
+
+
+    <string name="variety_1">[ "Saturn" | "Mars" | "Venus" | "Pluto" ]</string>
+    <string name="variety_2">[ "Azur" | "Sputnik I" | "Asterix" | "Explorer-I" ]</string>
+
+
+    <string name="game_over">"Game over! "</string>
+    <string name="game_win">Game win! </string>
+    <string name="your_score">"Your score is "</string>
     <string name="points"> points </string>
-    <string name="exit">EXIT</string>
-    <string name="new_game">NEW_GAME</string>
+    <string name="exit">Exit</string>
+    <string name="new_game">New game</string>
     <string name="yes">Yes</string>
     <string name="no">No</string>
     <string name="exit_question">Do you really want to quit ?</string>
