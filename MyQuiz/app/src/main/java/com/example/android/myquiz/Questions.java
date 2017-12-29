@@ -1,8 +1,10 @@
 package com.example.android.myquiz;
 
-
+//REVU с arrays.xml массивами думаю можно и без этого класса обойтись
+//Или сделать класс ютильным?
 public class Questions {
 
+    //REVU Да, arrays.xml само то
     public String[] mQuestionsList = {
             "What is the sixth planet from the sun ?",
             "The first satellite in space ?",
@@ -32,31 +34,37 @@ public class Questions {
     public String[] mCorrectAnswers = {"Saturn", "Sputnik I", "Mercury", "Venus", "Venus", "Eris", "Uranus", "Earth", "Neptune", "Jupiter"};
 
     public String getQuestion(int a) {
+        //REVU Чистый код: return mQuestionsList[a];
         String question = mQuestionsList[a];
         return question;
     }
 
     public String getChoice1(int a) {
+        //REVU Тоже самое^
         String choice = mChoices[a][0];
         return choice;
     }
 
     public String getChoice2(int a) {
+        //REVU Тоже самое^
         String choice = mChoices[a][1];
         return choice;
     }
 
     public String getChoice3(int a) {
+        //REVU Тоже самое^
         String choice = mChoices[a][2];
         return choice;
     }
 
     public String getChoice4(int a) {
+        //REVU Тоже самое^
         String choice = mChoices[a][3];
         return choice;
     }
 
     public String getCorrectAnswer(int a) {
+        //REVU Тоже самое^
         String answer = mCorrectAnswers[a];
         return answer;
     }

@@ -17,16 +17,18 @@ import java.util.List;
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
+    //REVU WTF? Кто удалять будет?
     //    private String[] questions = getResources().getStringArray(R.array.questions);
     //    private String[] answers = getResources().getStringArray(R.array.answers);
     //    private String[] variety = getResources().getStringArray(R.array.variety);
-
+    //REVU private? Названия не по соглашению m....
     Button answer1;
     Button answer2;
     Button answer3;
     Button answer4;
-
+    //REVU тоже самое^
     TextView mQuestionView;
+    //Revu Названия не по соглашению m....
     TextView score;
 
     private Questions mQuestions = new Questions();
@@ -35,14 +37,17 @@ public class MainActivity extends AppCompatActivity {
     private int mScore = 0;
     private int mQuestionNumber = 0;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //REVU redundant casting
         score = (TextView) findViewById(R.id.score);
         mQuestionView = (TextView) findViewById(R.id.question);
 
+        //REVU redundant casting
         answer1 = (Button) findViewById(R.id.answer_1);
         answer2 = (Button) findViewById(R.id.answer_2);
         answer3 = (Button) findViewById(R.id.answer_3);
@@ -50,9 +55,27 @@ public class MainActivity extends AppCompatActivity {
 
         updateQuestion();
 
+        //REVU Все листенеры одинаковые. Не? Например:
+//        private void checkAnswer(String actualAnswer, String expectedAnswer) {
+//            if (actualAnswer.equals(expectedAnswer)) {
+//                mScore++;
+//                updateScore(mScore);
+//                updateQuestion();
+//
+//                if (mScore == 10) {
+//                    hideItems();
+//                    gameWin();
+//                }
+//            } else {
+//                gameOver();
+//            }
+//        }
+        //Или свой Листенер написать
+
         answer1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //REVU use .equals()
                 if (answer1.getText() == mAnswer) {
                     mScore++;
                     updateScore(mScore);
@@ -71,6 +94,7 @@ public class MainActivity extends AppCompatActivity {
         answer2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //REVU use .equals()
                 if (answer2.getText() == mAnswer) {
                     mScore++;
                     updateScore(mScore);
@@ -88,6 +112,7 @@ public class MainActivity extends AppCompatActivity {
         answer3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //REVU use .equals()
                 if (answer3.getText() == mAnswer) {
                     mScore++;
                     updateScore(mScore);
@@ -105,6 +130,7 @@ public class MainActivity extends AppCompatActivity {
         answer4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //REVU use .equals()
                 if (answer4.getText() == mAnswer) {
                     mScore++;
                     updateScore(mScore);
@@ -144,6 +170,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void updateScore(int point) {
+        //REVU Вот тут можно xliff спользовать
         score.setText(getString(R.string.score) + mScore);
     }
 
@@ -151,9 +178,9 @@ public class MainActivity extends AppCompatActivity {
         AlertDialog.Builder alertDB = new AlertDialog.Builder(MainActivity.this);
         alertDB
                 .setMessage(getString(R.string.game_over) + getString(R.string.your_score) + "" + mScore + " " + getString(R.string.points))
-
+//REVU зачем перенос строки? Некрасиво
                 .setCancelable(false)
-
+//REVU тоже самое
                 .setNegativeButton(R.string.exit,
                         new DialogInterface.OnClickListener() {
                             @Override
@@ -213,6 +240,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
+        //REVU название не по соглашению
         AlertDialog.Builder alertDB_exit = new AlertDialog.Builder(MainActivity.this);
         alertDB_exit
                 .setMessage(R.string.exit_question)
@@ -229,6 +257,7 @@ public class MainActivity extends AppCompatActivity {
                         new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
+                                //REVU Зачем?
                                 return;
                             }
                         });
@@ -244,6 +273,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void exit() {
+        //REVU a - очень информативное название
         Intent a = new Intent(Intent.ACTION_MAIN);
         a.addCategory(Intent.CATEGORY_HOME);
         a.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
