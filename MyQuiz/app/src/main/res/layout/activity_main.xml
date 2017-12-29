@@ -8,6 +8,7 @@
     android:padding="16dp"
     tools:context="com.example.android.myquiz.MainActivity">
 
+    <!--REVU все выносим в ресурсные файлы-->
     <TextView
         android:id="@+id/score"
         android:layout_width="match_parent"
@@ -29,6 +30,7 @@
         android:textSize="35sp"
         />
 
+    <!--REVU может лучше Relative?-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
