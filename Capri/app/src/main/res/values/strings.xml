@@ -1,0 +1,224 @@
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!--Miscellaneous strings-->
+    <string name="app_name">Quiz</string>
+    <string name="players_name_hint">Enter your name</string>
+    <string name="category">Choose a category:</string>
+    <string name="nameSummary">Congratulations, <xliff:g example="Amy" id="name">%s</xliff:g>!</string>
+    <string name="well_done">Well done!</string>
+    <string name="results">Here are your results: </string>
+    <string name="total_correct"><xliff:g example="5" id="totalCorrect">%d</xliff:g> correct answers out of <xliff:g example="10" id="number_of_questions">%d</xliff:g>!</string>
+    <string name="total_incorrect"><xliff:g example="5" id="totalIncorrect">%d</xliff:g> wrong answers out of <xliff:g example="10" id="number_of_questions">%d</xliff:g>!</string>
+    <string name="questionNumber">Question <xliff:g example="5" id="currentQuestion">%d</xliff:g> out of <xliff:g example="10" id="number_of_questions">%d</xliff:g></string>
+    <string name="correctAnswer">Correct answer</string>
+    <string name="wrongAnswer">Wrong answer</string>
+    <string name="nextQuestion">Next Question</string>
+    <string name="not_chosen">Please, choose the answer to proceed</string>
+    <string name="not_chosen1">Please, answer at least one question to proceed</string>
+    <string name="not_chosen2">Please, enter the answer to proceed</string>
+    <string name="emoji_quiz" translatable="false">Emoji Movie Quiz</string>
+    <string name="ny_quiz">New Year traditions around the world</string>
+    <string name="inventions_quiz">Inventions Quiz</string>
+    <string name="submit_button">Submit</string>
+    <string name="tryAnother">Try another quiz category at the Main screen of the app!</string>
+    <string name="main_screen">Main screen</string>
+    <string name="share">Share</string>
+
+    <!--New Year Quiz Questions-->
+    <string name="ny_question_1">In this country tradition requires you to write your New Year’s wish on a piece of paper and then set it alight, drop the remains into your champagne glass and drink it before the clock goes past 12.</string>
+    <string name="ny_question_2">In Spain, as the midnight strikes, it is customary to quickly eat 12 what (one at each strike of the clock)?</string>
+    <string name="ny_question_3">In one of the cities of this country every New Year’s Eve a specially designed ball is \"dropped\" at 11:59 pm EST amidst cheers of millions of spectators.</string>
+    <string name="ny_question_4">In this country families get together to bake a special bread for the New Year. They hide a coin in the dough for good luck.</string>
+    <string name="ny_question_5">In this country there is a custom to throw away old furniture out from the windows.</string>
+    <string name="ny_question_6">In Japan traditional celebrations include (pick 2 answers): </string>
+    <string name="ny_question_7">In France adults cook a festive cake with what inside?</string>
+    <string name="ny_question_8">In Denmark traditional celebrations include (pick 2 answers):</string>
+    <string name="ny_question_9">In this country there is a funny New Year tradition. When people sit around the festive table, the light turns off for 3 minutes.</string>
+    <string name="ny_question_10">In this country people drop molten lead into the cold water to see what shape it takes, and predict the future."</string>
+
+    <!--New Year Quiz Answer Variants-->
+    <string name="ny_answer1_hint">Turkey/Russia/Switzerland/Chile</string>
+
+    <string name="ny_q2_var_1">Cherries</string>
+    <string name="ny_q2_var_2">Olives</string>
+    <string name="ny_q2_var_3">Grapes</string>
+    <string name="ny_q2_var_4">Peas</string>
+
+    <string name="ny_q3_var_1">USA</string>
+    <string name="ny_q3_var_2">France</string>
+    <string name="ny_q3_var_3">Poland</string>
+    <string name="ny_q3_var_4">Sweden</string>
+
+    <string name="ny_q4_var_1">Croatia</string>
+    <string name="ny_q4_var_2">Finland</string>
+    <string name="ny_q4_var_3">Egypt</string>
+    <string name="ny_q4_var_4">Greece</string>
+
+    <string name="ny_q5_var_1">Austria</string>
+    <string name="ny_q5_var_2">Cyprus</string>
+    <string name="ny_q5_var_3">Italy</string>
+    <string name="ny_q5_var_4">Canada</string>
+
+    <string name="ny_q6_var_1">Visiting temples to pray for the departed and for good harvest</string>
+    <string name="ny_q6_var_2">Dressing up in the costumes of cartoon heroes</string>
+    <string name="ny_q6_var_3">Inviting strangers to the house</string>
+    <string name="ny_q6_var_4">Temple bells ringing 108 times</string>
+
+    <string name="ny_q7_var_1">Raisin</string>
+    <string name="ny_q7_var_2">Dried apricot</string>
+    <string name="ny_q7_var_3">Mushroom</string>
+    <string name="ny_q7_var_4">Bean</string>
+
+    <string name="ny_q8_var_1">Throwing buckets of water out of their windows</string>
+    <string name="ny_q8_var_2">Standing on a chair and jumping from it as the clock strikes twelve</string>
+    <string name="ny_q8_var_3">Collecting dishes all the year around and throwing them at the front door on the New Year’s Eve</string>
+    <string name="ny_q8_var_4">Burning the Scarecrow</string>
+
+    <string name="ny_q9_var_1">Norway</string>
+    <string name="ny_q9_var_2">Bulgaria</string>
+    <string name="ny_q9_var_3">Ukraine</string>
+    <string name="ny_q9_var_4">Albania</string>
+
+    <string name="ny_q10_var_1">Germany</string>
+    <string name="ny_q10_var_2">Israel</string>
+    <string name="ny_q10_var_3">Montenegro</string>
+    <string name="ny_q10_var_4">Portugal</string>
+
+    <!--New Year Quiz: Correct answers and extra info-->
+    <string name="ny_answer_1">\nRussia. It is believed that if you manage to do all this while the Chimes are beating, the wish is sure to come true.</string>
+    <string name="ny_answer_2">12 grapes. They are supposed to bring good luck – one grape for each of the twelve months of the New Year.</string>
+    <string name="ny_answer_3">USA. This tradition takes place in New York since 1907.</string>
+    <string name="ny_answer_4">Greece. It is believed that the coin will bring good luck in the new year to the one who finds it.</string>
+    <string name="ny_answer_5">Italy. It is believed that you do not need to take old things with you to the new year.</string>
+    <string name="ny_answer_6">Traditional celebrations in Japan include visiting temples to pray for the departed and for good harvest. Temple bells are rung 108 times to scare off the evil. Another ritual with the same purpose is to start laughing as the clock is about to strike midnight.</string>
+    <string name="ny_answer_7">A bean. The person who takes it out becomes the Bean King, wears the paper crown and can make orders to everyone at that night.</string>
+    <string name="ny_answer_8">People in Denmark believe that if they stand on a chair and jump from it as the clock strikes twelve to welcome New Year, it would bring them luck. Another tradition is to collect dishes all the year around and throw them at the front door on the New Year’s Eve – the more the broken plates, the more friends one shall have in the New Year.</string>
+    <string name="ny_answer_9">Bulgaria. These minutes are called \«New Year's minutes for kisses\».</string>
+    <string name="ny_answer_10">Germany. Each shape symbolizes an aspect of life – love, prosperity etc."</string>
+
+    <!--Emoji Quiz Answer Variants-->
+    <string name="em_q1_var_1">The Village</string>
+    <string name="em_q1_var_2">Over the hedge</string>
+    <string name="em_q1_var_3">Forrest Gump</string>
+    <string name="em_q1_var_4">Into the Woods</string>
+
+    <string name="em_q2_var_1">E.T. the Extra-Terrestrial</string>
+    <string name="em_q2_var_2">Edge of Tomorrow</string>
+    <string name="em_q2_var_3">Cowboys and Aliens</string>
+    <string name="em_q2_var_4">Men in Black</string>
+
+    <string name="em_q3_var_1">Eat Pray Love</string>
+    <string name="em_q3_var_2">Breakfast at Tiffany\'s</string>
+    <string name="em_q3_var_3">Kingsman: The Golden Circle</string>
+    <string name="em_q3_var_4">Soul Kitchen</string>
+
+    <string name="em_q4_var_1">Mask</string>
+    <string name="em_q4_var_2">Shrek</string>
+    <string name="em_q4_var_3">Hulk</string>
+    <string name="em_q4_var_4">The Green Lantern</string>
+
+    <string name="em_q5_var_1">Hush</string>
+    <string name="em_q5_var_2">The Collector</string>
+    <string name="em_q5_var_3">The Silence of the Lambs</string>
+    <string name="em_q5_var_4">Black Sheep</string>
+
+    <string name="em_q6_var_1">Cinderella</string>
+    <string name="em_q6_var_2">Confessions of a Shopaholic</string>
+    <string name="em_q6_var_3">Coco before Chanel</string>
+    <string name="em_q6_var_4">The Devil Wears Prada</string>
+
+    <string name="em_q7_var_1">Signs</string>
+    <string name="em_q7_var_2">Children of the Corn</string>
+    <string name="em_q7_var_3">The Catcher in the Rye</string>
+    <string name="em_q7_var_4">Knowing</string>
+
+    <string name="em_q8_var_1">Limitless</string>
+    <string name="em_q8_var_2">The Matrix</string>
+    <string name="em_q8_var_3">Jobs</string>
+    <string name="em_q8_var_4">Pirates of Silicon Valley</string>
+
+    <string name="em_q9_var_1">The Many Adventures of Winnie the Pooh</string>
+    <string name="em_q9_var_2">Teddy Bears</string>
+    <string name="em_q9_var_3">Paddington Bear</string>
+    <string name="em_q9_var_4">Ted</string>
+
+    <string name="em_q10_var_1">American Beauty</string>
+    <string name="em_q10_var_2">The Name of the Rose</string>
+    <string name="em_q10_var_3">The War of the Roses</string>
+    <string name="em_q10_var_4">Once Upon a Time in America</string>
+
+    <!--Inventions Quiz: Questions-->
+    <string name="inv_q_1">Where was the yo-yo invented?</string>
+    <string name="inv_q_2">Who is the only U.S. President to invent and patent something?</string>
+    <string name="inv_q_3">When were blue jeans invented?</string>
+    <string name="inv_q_4">What beverage was invented by Charles Alderton in 1885 in Waco, Texas?</string>
+    <string name="inv_q_5">What did Igor Sikorsky invent?</string>
+    <string name="inv_q_6">When was the \"Monopoly\" game created?</string>
+    <string name="inv_q_7">How many predictions of Jules Verne were realized?</string>
+    <string name="inv_q_8">What piece of clothing was invented by French fashion designer Louis Reard in 1946?</string>
+    <string name="inv_q_9">When was the toothbrush invented?</string>
+    <string name="inv_q_10">For whom high heeled shoes were invented?</string>
+
+    <!--Inventions Quiz Answer Variants-->
+    <string name="inv_q1_var_1">France</string>
+    <string name="inv_q1_var_2">USA</string>
+    <string name="inv_q1_var_3">Philippines</string>
+    <string name="inv_q1_var_4">England</string>
+
+    <string name="inv_q2_var_1">Abraham Lincoln</string>
+    <string name="inv_q2_var_2">Theodore Roosevelt</string>
+    <string name="inv_q2_var_3">Thomas Jefferson</string>
+    <string name="inv_q2_var_4">Rutherford B. Hayes</string>
+
+    <string name="inv_q3_var_1">1900s</string>
+    <string name="inv_q3_var_2">1860s</string>
+    <string name="inv_q3_var_3">1870s</string>
+    <string name="inv_q3_var_4">1850s</string>
+
+    <string name="inv_q4_var_1">Cream soda</string>
+    <string name="inv_q4_var_2">Coca-Cola</string>
+    <string name="inv_q4_var_3">Dr. Pepper</string>
+    <string name="inv_q4_var_4">Sprite</string>
+
+    <string name="inv_q5_var_1">Hydroplane</string>
+    <string name="inv_q5_var_2">Jet engine airplane</string>
+    <string name="inv_q5_var_3">Helicopter</string>
+    <string name="inv_q5_var_4">Glider</string>
+
+    <string name="inv_q6_var_1">1940s</string>
+    <string name="inv_q6_var_2">1930s</string>
+    <string name="inv_q6_var_3">1920s</string>
+    <string name="inv_q6_var_4">1950s</string>
+
+    <string name="inv_q7_var_1">108</string>
+    <string name="inv_q7_var_2">15</string>
+    <string name="inv_q7_var_3">64</string>
+    <string name="inv_q7_var_4">0</string>
+
+    <string name="inv_q8_var_1">Zoot suit</string>
+    <string name="inv_q8_var_2">Mini-skirt</string>
+    <string name="inv_q8_var_3">Bikini</string>
+    <string name="inv_q8_var_4">Tank top</string>
+
+    <string name="inv_q9_var_1">1770</string>
+    <string name="inv_q9_var_2">1911</string>
+    <string name="inv_q9_var_3">1824</string>
+    <string name="inv_q9_var_4">1947</string>
+
+    <string name="inv_q10_var_1">Cleopatra</string>
+    <string name="inv_q10_var_2">Queen Elizabeth I</string>
+    <string name="inv_q10_var_3">King Louis the XIV</string>
+    <string name="inv_q10_var_4">King Charles II</string>
+
+    <!--Inventions: extra info-->
+    <string name="inv_q1_info">The yo-yo was first used by hunters as weapons. They were wooden disks on strings. In the 1920s, a man from the U.S. named Donald Duncan made the yo-yo into a toy after he visited the Philippines.</string>
+    <string name="inv_q2_info">In 1849 Honest Abe invented a method to aid ships that got stuck on sandbars. It was never used.</string>
+    <string name="inv_q3_info">The first blue jeans were invented by tailor Levi Strauss, who invented tougher working pants for the miners of the California Gold Rush.</string>
+    <string name="inv_q4_info">The cherry-flavored cola made its debut at Morrison\'s Old Corner Drugstore.</string>
+    <string name="inv_q5_info">Invented in 1939.</string>
+    <string name="inv_q6_info">\"Monopoly\" was brought out for Christmas 1934. The first games were hand drawn on linoleum with streets from Atlantic City, N.J. as the property.</string>
+    <string name="inv_q7_info">To date, 64 of the 108 predictions that Jules Verne made in his science fiction works have been implemented.
+Among them, television and phototelegraph, an escalator and a moving pavement, a flight to the moon and organ transplantation, and much more.</string>
+    <string name="inv_q8_info">The bikini, a two-piece swimsuit named for the Bikini Atoll in the Pacific, made its debut on July 5, 1946.</string>
+    <string name="inv_q9_info">The first toothbrush was made out of a bone and small brush, by jail prisoner William Addis of England.</string>
+    <string name="inv_q10_info">King Louis XIV was very short and didn\'t like looking up at people he spoke to, so he had a tall pair of shoes made for him.</string>
+</resources>

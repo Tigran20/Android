@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context="com.example.android.newyearquiz.MainActivity">
+
+    <LinearLayout
+        android:id="@+id/activity_bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#dac6b4"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/padding2"
+            android:fontFamily="cursive"
+            android:text="@string/ny_quiz"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+            android:textColor="@color/em_header_color"
+            android:textSize="@dimen/text_size" />
+
+        <TextView
+            android:id="@+id/question_number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="cursive"
+            android:gravity="center_horizontal"
+            android:text="@string/questionNumber"
+            android:textSize="@dimen/text_size2" />
+
+        <ImageView
+            android:id="@+id/question_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/ny_borders"
+            android:padding="@dimen/padding1"
+            android:scaleType="centerCrop"
+            android:src="@drawable/question6img" />
+
+        <TextView
+            android:id="@+id/question"
+            style="@style/TextView_questions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/ny_question_6" />
+
+        <LinearLayout
+            style="@style/RadioButtons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <CheckBox
+                android:id="@+id/checkbox1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/ny_q6_var_1" />
+
+            <CheckBox
+                android:id="@+id/checkbox2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/ny_q6_var_2" />
+
+            <CheckBox
+                android:id="@+id/checkbox3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/ny_q6_var_3" />
+
+            <CheckBox
+                android:id="@+id/checkbox4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/ny_q6_var_4" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/answer"
+            style="@style/TextView_questions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/ny_answer_6" />
+
+        <Button
+            android:id="@+id/next_question"
+            style="@style/ny_buttons"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/nextQuestion" />
+    </LinearLayout>
+</ScrollView>

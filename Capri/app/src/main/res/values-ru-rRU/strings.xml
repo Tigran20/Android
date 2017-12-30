@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">Quiz</string>
+    <string name="players_name_hint">Имя игрока</string>
+    <string name="nameSummary">Поздравляю, <xliff:g example="Amy" id="name">%s</xliff:g>!</string>
+    <string name="well_done">Молодец!</string>
+    <string name="results">Результаты:</string>
+    <string name="total_correct"><xliff:g example="5" id="totalCorrect">%d</xliff:g> верных ответов из <xliff:g example="10" id="number_of_questions">%d</xliff:g>!</string>
+    <string name="total_incorrect"><xliff:g example="5" id="totalIncorrect">%d</xliff:g> неверных ответов из <xliff:g example="10" id="number_of_questions">%d</xliff:g>!</string>
+    <string name="questionNumber">Вопрос <xliff:g example="5" id="currentQuestion">%d</xliff:g> из <xliff:g example="10" id="number_of_questions">%d</xliff:g></string>
+    <string name="correctAnswer">Верно!</string>
+    <string name="wrongAnswer">Неверно!</string>
+    <string name="nextQuestion">Далее</string>
+    <string name="not_chosen">Пожалуйста, выберите ответ, чтобы продолжить</string>
+    <string name="submit_button">Проверить</string>
+    <string name="tryAnother">Попробуйте другой квиз на главном экране приложения!</string>
+    <string name="main_screen">Домой</string>
+    <string name="share">Поделиться</string>
+    <string name="ny_q1_var_1">Турция</string>
+    <string name="ny_q1_var_2">Россия</string>
+    <string name="ny_q1_var_3">Швейцария</string>
+    <string name="ny_q1_var_4">Чили</string>
+    <string name="em_q2_var_4">Люди в черном</string>
+    <string name="ny_q5_var_4">Канада</string>
+    <string name="em_q1_var_1">Таинственный лес</string>
+    <string name="em_q1_var_2">Лесная братва</string>
+    <string name="em_q1_var_3">Форрест Гамп</string>
+    <string name="em_q1_var_4">Чем дальше в лес...</string>
+    <string name="em_q2_var_1">Инопланетянин</string>
+    <string name="em_q2_var_2">Грань будущего</string>
+    <string name="em_q2_var_3">Ковбои против пришельцев</string>
+    <string name="em_q3_var_1">Ешь, молись, люби</string>
+    <string name="em_q3_var_2">Завтрак у Тиффани</string>
+    <string name="em_q3_var_3">Kingsman: Золотое кольцо</string>
+    <string name="em_q3_var_4">Душевная кухня</string>
+    <string name="em_q4_var_1">Маска</string>
+    <string name="em_q4_var_2">Шрек</string>
+    <string name="em_q4_var_3">Невероятный Халк</string>
+    <string name="em_q4_var_4">Зеленый Фонарь</string>
+    <string name="em_q5_var_1">Тишина</string>
+    <string name="em_q5_var_2">Коллекционер</string>
+    <string name="em_q5_var_3">Молчание ягнят</string>
+    <string name="em_q5_var_4">Паршивая овца</string>
+    <string name="em_q6_var_1">Золушка</string>
+    <string name="em_q6_var_2">Шопоголик</string>
+    <string name="em_q6_var_3">Коко до Шанель</string>
+    <string name="em_q6_var_4">Дьявол носит Prada</string>
+    <string name="em_q7_var_1">Знаки</string>
+    <string name="em_q7_var_2">Дети кукурузы</string>
+    <string name="em_q7_var_3">Над пропастью во ржи</string>
+    <string name="em_q7_var_4">Знамение</string>
+    <string name="em_q8_var_2">Матрица</string>
+    <string name="em_q8_var_1">Области тьмы</string>
+    <string name="em_q8_var_3">Джобс: Империя соблазна</string>
+    <string name="em_q8_var_4">Пираты Силиконовой долины</string>
+    <string name="em_q9_var_1">Приключения Винни</string>
+    <string name="em_q9_var_2">Плюшевые мишки</string>
+    <string name="em_q9_var_3">Приключения Паддингтона</string>
+    <string name="em_q9_var_4">Третий лишний</string>
+    <string name="em_q10_var_1">Красота по-американски</string>
+    <string name="em_q10_var_2">Имя розы</string>
+    <string name="em_q10_var_3">Война супругов Роуз</string>
+    <string name="em_q10_var_4">Однажды в Америке</string>
+    <string name="not_chosen1">Пожалуйста, ответьте хотя бы на один вопрос для продолжения</string>
+    <string name="category">Выберите категорию:</string>
+</resources>
