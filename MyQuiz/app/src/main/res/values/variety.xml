@@ -1,8 +1,0 @@
-<resources>
-    <string-array name="variety">
-        <item>@string/variety_1</item>
-        <item>@string/variety_2</item>
-
-    </string-array>
-
-</resources>
