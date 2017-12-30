@@ -10,24 +10,15 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Random;
-
 public class MainActivity extends AppCompatActivity {
-    //    private String[] questions = getResources().getStringArray(R.array.questions);
-    //    private String[] answers = getResources().getStringArray(R.array.answers);
-    //    private String[] variety = getResources().getStringArray(R.array.variety);
 
-    Button answer1;
-    Button answer2;
-    Button answer3;
-    Button answer4;
+    private Button answer1;
+    private Button answer2;
+    private Button answer3;
+    private Button answer4;
 
-    TextView mQuestionView;
-    TextView score;
+    private TextView mQuestionView;
+    private TextView score;
 
     private Questions mQuestions = new Questions();
 
@@ -40,20 +31,20 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        score = (TextView) findViewById(R.id.score);
-        mQuestionView = (TextView) findViewById(R.id.question);
+        score = findViewById(R.id.score);
+        mQuestionView = findViewById(R.id.question);
 
-        answer1 = (Button) findViewById(R.id.answer_1);
-        answer2 = (Button) findViewById(R.id.answer_2);
-        answer3 = (Button) findViewById(R.id.answer_3);
-        answer4 = (Button) findViewById(R.id.answer_4);
+        answer1 = findViewById(R.id.answer_1);
+        answer2 = findViewById(R.id.answer_2);
+        answer3 = findViewById(R.id.answer_3);
+        answer4 = findViewById(R.id.answer_4);
 
         updateQuestion();
 
         answer1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (answer1.getText() == mAnswer) {
+                if (answer1.getText().equals(mAnswer)) {
                     mScore++;
                     updateScore(mScore);
                     updateQuestion();
@@ -71,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
         answer2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (answer2.getText() == mAnswer) {
+                if (answer2.getText().equals(mAnswer)) {
                     mScore++;
                     updateScore(mScore);
                     updateQuestion();
@@ -88,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
         answer3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (answer3.getText() == mAnswer) {
+                if (answer3.getText().equals(mAnswer)) {
                     mScore++;
                     updateScore(mScore);
                     updateQuestion();
@@ -105,7 +96,7 @@ public class MainActivity extends AppCompatActivity {
         answer4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (answer4.getText() == mAnswer) {
+                if (answer4.getText().equals(mAnswer)) {
                     mScore++;
                     updateScore(mScore);
                     updateQuestion();
@@ -133,7 +124,6 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-
     private void hideItems() {
         mQuestionView.setVisibility(View.INVISIBLE);
         score.setVisibility(View.INVISIBLE);
@@ -158,7 +148,7 @@ public class MainActivity extends AppCompatActivity {
                         new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
-                                exit();
+                                exitFromApp();
                             }
                         })
                 .setPositiveButton(R.string.new_game,
@@ -184,12 +174,11 @@ public class MainActivity extends AppCompatActivity {
         alertDB
                 .setMessage(getString(R.string.game_win) + getString(R.string.your_score) + mScore + " " + getString(R.string.points))
                 .setCancelable(false)
-
                 .setNegativeButton(R.string.exit,
                         new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
-                                exit();
+                                exitFromApp();
                             }
                         })
                 .setPositiveButton(R.string.new_game,
@@ -198,7 +187,6 @@ public class MainActivity extends AppCompatActivity {
                             public void onClick(DialogInterface dialog, int which) {
                                 startActivity(new Intent(getApplicationContext(), MainActivity.class));
                             }
-
                         });
 
         AlertDialog alertDialog = alertDB.create();
@@ -216,15 +204,13 @@ public class MainActivity extends AppCompatActivity {
         AlertDialog.Builder alertDB_exit = new AlertDialog.Builder(MainActivity.this);
         alertDB_exit
                 .setMessage(R.string.exit_question)
-
                 .setNegativeButton(R.string.yes,
                         new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
-                                exit();
+                                exitFromApp();
                             }
                         })
-
                 .setPositiveButton(R.string.no,
                         new DialogInterface.OnClickListener() {
                             @Override
@@ -243,7 +229,7 @@ public class MainActivity extends AppCompatActivity {
         n.setTextColor(Color.BLACK);
     }
 
-    public void exit() {
+    public void exitFromApp() {
         Intent a = new Intent(Intent.ACTION_MAIN);
         a.addCategory(Intent.CATEGORY_HOME);
         a.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);

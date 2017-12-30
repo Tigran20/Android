@@ -32,33 +32,27 @@ public class Questions {
     public String[] mCorrectAnswers = {"Saturn", "Sputnik I", "Mercury", "Venus", "Venus", "Eris", "Uranus", "Earth", "Neptune", "Jupiter"};
 
     public String getQuestion(int a) {
-        String question = mQuestionsList[a];
-        return question;
+        return mQuestionsList[a];
     }
 
     public String getChoice1(int a) {
-        String choice = mChoices[a][0];
-        return choice;
+        return mChoices[a][0];
     }
 
     public String getChoice2(int a) {
-        String choice = mChoices[a][1];
-        return choice;
+        return mChoices[a][1];
     }
 
     public String getChoice3(int a) {
-        String choice = mChoices[a][2];
-        return choice;
+        return  mChoices[a][2];
     }
 
     public String getChoice4(int a) {
-        String choice = mChoices[a][3];
-        return choice;
+        return mChoices[a][3];
     }
 
     public String getCorrectAnswer(int a) {
-        String answer = mCorrectAnswers[a];
-        return answer;
+        return mCorrectAnswers[a];
     }
 
     public int getLength() {
