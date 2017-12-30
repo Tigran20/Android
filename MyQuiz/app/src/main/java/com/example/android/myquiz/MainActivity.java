@@ -39,76 +39,30 @@ public class MainActivity extends AppCompatActivity {
         answer3 = findViewById(R.id.answer_3);
         answer4 = findViewById(R.id.answer_4);
 
+        answer1.setOnClickListener(new QuestionListener());
+        answer2.setOnClickListener(new QuestionListener());
+        answer3.setOnClickListener(new QuestionListener());
+        answer4.setOnClickListener(new QuestionListener());
+
         updateQuestion();
+    }
 
-        answer1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (answer1.getText().equals(mAnswer)) {
-                    mScore++;
-                    updateScore(mScore);
-                    updateQuestion();
-
-                    if (mScore == 10) {
-                        hideItems();
-                        gameWin();
-                    }
-                } else {
-                    gameOver();
+    private class QuestionListener implements View.OnClickListener {
+        @Override
+        public void onClick(View v) {
+            Button button = (Button) v;
+            if (button.getText().toString().equals(mAnswer)) {
+                mScore++;
+                updateScore(mScore);
+                updateQuestion();
+                if (mScore == 10) {
+                    hideItems();
+                    gameWin();
                 }
+            } else {
+                gameOver();
             }
-        });
-
-        answer2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (answer2.getText().equals(mAnswer)) {
-                    mScore++;
-                    updateScore(mScore);
-                    updateQuestion();
-                    if (mScore == 10) {
-                        hideItems();
-                        gameWin();
-                    }
-                } else {
-                    gameOver();
-                }
-            }
-        });
-
-        answer3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (answer3.getText().equals(mAnswer)) {
-                    mScore++;
-                    updateScore(mScore);
-                    updateQuestion();
-                    if (mScore == 10) {
-                        hideItems();
-                        gameWin();
-                    }
-                } else {
-                    gameOver();
-                }
-            }
-        });
-
-        answer4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (answer4.getText().equals(mAnswer)) {
-                    mScore++;
-                    updateScore(mScore);
-                    updateQuestion();
-                    if (mScore == 10) {
-                        hideItems();
-                        gameWin();
-                    }
-                } else {
-                    gameOver();
-                }
-            }
-        });
+        }
     }
 
     private void updateQuestion() {
@@ -138,95 +92,50 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void gameOver() {
-        AlertDialog.Builder alertDB = new AlertDialog.Builder(MainActivity.this);
-        alertDB
+        new AlertDialog.Builder(this, R.style.AppCompatAlertDialogStyle)
                 .setMessage(getString(R.string.game_over) + getString(R.string.your_score) + "" + mScore + " " + getString(R.string.points))
-
                 .setCancelable(false)
-
-                .setNegativeButton(R.string.exit,
-                        new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                exitFromApp();
-                            }
-                        })
-                .setPositiveButton(R.string.new_game,
-                        new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                startActivity(new Intent(getApplicationContext(), MainActivity.class));
-                            }
-                        });
-
-        AlertDialog alertDialog = alertDB.create();
-        alertDialog.show();
-
-        Button p = alertDialog.getButton(DialogInterface.BUTTON_POSITIVE);
-        p.setTextColor(Color.BLACK);
-
-        Button n = alertDialog.getButton(DialogInterface.BUTTON_NEGATIVE);
-        n.setTextColor(Color.BLACK);
+                .setNegativeButton(R.string.exit, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        exitFromApp();
+                    }
+                })
+                .setPositiveButton(R.string.new_game, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface arg0, int arg1) {
+                        startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                    }
+                }).create().show();
     }
 
     private void gameWin() {
-        AlertDialog.Builder alertDB = new AlertDialog.Builder(MainActivity.this);
-        alertDB
+        new AlertDialog.Builder(this, R.style.AppCompatAlertDialogStyle)
                 .setMessage(getString(R.string.game_win) + getString(R.string.your_score) + mScore + " " + getString(R.string.points))
                 .setCancelable(false)
-                .setNegativeButton(R.string.exit,
-                        new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                exitFromApp();
-                            }
-                        })
-                .setPositiveButton(R.string.new_game,
-                        new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                startActivity(new Intent(getApplicationContext(), MainActivity.class));
-                            }
-                        });
-
-        AlertDialog alertDialog = alertDB.create();
-        alertDialog.show();
-
-        Button p = alertDialog.getButton(DialogInterface.BUTTON_POSITIVE);
-        p.setTextColor(Color.BLACK);
-
-        Button n = alertDialog.getButton(DialogInterface.BUTTON_NEGATIVE);
-        n.setTextColor(Color.BLACK);
+                .setNegativeButton(R.string.exit, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        exitFromApp();
+                    }
+                })
+                .setPositiveButton(R.string.new_game, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface arg0, int arg1) {
+                        startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                    }
+                }).create().show();
     }
 
     @Override
     public void onBackPressed() {
-        AlertDialog.Builder alertDB_exit = new AlertDialog.Builder(MainActivity.this);
-        alertDB_exit
+        new AlertDialog.Builder(this, R.style.AppCompatAlertDialogStyle)
                 .setMessage(R.string.exit_question)
-                .setNegativeButton(R.string.yes,
-                        new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                exitFromApp();
-                            }
-                        })
-                .setPositiveButton(R.string.no,
-                        new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                return;
-                            }
-                        });
-
-        AlertDialog alertDialog_exit = alertDB_exit.create();
-        alertDialog_exit.show();
-
-        Button p = alertDialog_exit.getButton(DialogInterface.BUTTON_POSITIVE);
-        p.setTextColor(Color.BLACK);
-
-        Button n = alertDialog_exit.getButton(DialogInterface.BUTTON_NEGATIVE);
-        n.setTextColor(Color.BLACK);
+                .setCancelable(false)
+                .setNegativeButton(R.string.no, null)
+                .setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface arg0, int arg1) {
+                        exitFromApp();
+                    }
+                }).create().show();
     }
 
     public void exitFromApp() {
@@ -234,5 +143,6 @@ public class MainActivity extends AppCompatActivity {
         a.addCategory(Intent.CATEGORY_HOME);
         a.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(a);
+
     }
 }
