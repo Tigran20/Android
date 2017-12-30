@@ -7,9 +7,40 @@
 
     <string name="question_1">Шестая планета Солнечной системы ?</string>
     <string name="question_2">Первый искусственный спутник ?</string>
+    <string name="question_3">Первая планета Солнечной системы ?"</string>
+    <string name="question_4">Самая горячая планета Солнечной системы ?"</string>
+    <string name="question_5">Вторая планета от Солнца ?"</string>
+
+    <string name="choice_1">Сатурн</string>
+    <string name="choice_2">Марс</string>
+    <string name="choice_3">Венера</string>
+    <string name="choice_4">Плутон</string>
+
+    <string name="choice_1_2">"Азур"</string>
+    <string name="choice_2_2">"Спутник I"</string>
+    <string name="choice_3_2">"Астерикс"</string>
+    <string name="choice_4_2">"Эксплорер-I"</string>
+
+    <string name="choice_1_3">"Меркурий"</string>
+    <string name="choice_2_3">"Земля"</string>
+    <string name="choice_3_3">"Сатурн"</string>
+    <string name="choice_4_3">"Венера"</string>
+
+    <string name="choice_1_4">"Марс"</string>
+    <string name="choice_2_4">"Венера"</string>
+    <string name="choice_3_4">"Меркурий"</string>
+    <string name="choice_4_4">"Сатурн"</string>
+
+    <string name="choice_1_5">"Уран"</string>
+    <string name="choice_2_5">"Земля"</string>
+    <string name="choice_3_5">"Марс"</string>
+    <string name="choice_4_5">"Венера"</string>
 
     <string name="answer_1">Сатурн</string>
     <string name="answer_2">Спутник I</string>
+    <string name="answer_3">Меркурий</string>
+    <string name="answer_4">Венера</string>
+    <string name="answer_5">Венера</string>
 
     <string name="game_over">"Игра окончена! "</string>
     <string name="your_score">"Ваш счет "</string>
@@ -20,5 +51,4 @@
     <string name="yes">Да</string>
     <string name="no">Нет</string>
     <string name="exit_question">Вы действительно хотите выйти ?</string>
-    <string name="variety_1">[ Сатурн | Марс | Венера | Плутон ]</string>
 </resources>

@@ -1,7 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string-array name="answers">
+    <array name="answers">
         <item>@string/answer_1</item>
         <item>@string/answer_2</item>
-    </string-array>
-
+        <item>@string/answer_3</item>
+        <item>@string/answer_4</item>
+        <item>@string/answer_5</item>
+    </array>
 </resources>

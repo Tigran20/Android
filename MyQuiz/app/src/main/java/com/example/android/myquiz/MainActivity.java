@@ -2,7 +2,6 @@ package com.example.android.myquiz;
 
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Color;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -20,7 +19,16 @@ public class MainActivity extends AppCompatActivity {
     private TextView mQuestionView;
     private TextView score;
 
-    private Questions mQuestions = new Questions();
+    public String[] mQuestionsList;
+    public String[] mCorrectAnswers;
+
+    public int[][] mChoices = {
+            {R.string.choice_1, R.string.choice_2, R.string.choice_3, R.string.choice_4},
+            {R.string.choice_1_2, R.string.choice_2_2, R.string.choice_3_2, R.string.choice_4_2},
+            {R.string.choice_1_3, R.string.choice_2_3, R.string.choice_3_3, R.string.choice_4_3},
+            {R.string.choice_1_4, R.string.choice_2_4, R.string.choice_3_4, R.string.choice_4_4},
+            {R.string.choice_1_5, R.string.choice_2_5, R.string.choice_3_5, R.string.choice_4_5}
+    };
 
     private String mAnswer;
     private int mScore = 0;
@@ -30,6 +38,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        mQuestionsList = getResources().getStringArray(R.array.questions);
+        mCorrectAnswers = getResources().getStringArray(R.array.answers);
 
         score = findViewById(R.id.score);
         mQuestionView = findViewById(R.id.question);
@@ -44,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
         answer3.setOnClickListener(new QuestionListener());
         answer4.setOnClickListener(new QuestionListener());
 
+
         updateQuestion();
     }
 
@@ -55,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
                 mScore++;
                 updateScore(mScore);
                 updateQuestion();
-                if (mScore == 10) {
+                if (mScore == 5) {
                     hideItems();
                     gameWin();
                 }
@@ -66,14 +78,16 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void updateQuestion() {
-        if (mQuestionNumber < mQuestions.getLength()) {
-            mQuestionView.setText(mQuestions.getQuestion(mQuestionNumber));
-            answer1.setText(mQuestions.getChoice1(mQuestionNumber));
-            answer2.setText(mQuestions.getChoice2(mQuestionNumber));
-            answer3.setText(mQuestions.getChoice3(mQuestionNumber));
-            answer4.setText(mQuestions.getChoice4(mQuestionNumber));
+        if (mQuestionNumber < mQuestionsList.length) {
 
-            mAnswer = mQuestions.getCorrectAnswer(mQuestionNumber);
+            mQuestionView.setText(mQuestionsList[mQuestionNumber]);
+
+            answer1.setText(mChoices[mQuestionNumber][0]);
+            answer2.setText(mChoices[mQuestionNumber][1]);
+            answer3.setText(mChoices[mQuestionNumber][2]);
+            answer4.setText(mChoices[mQuestionNumber][3]);
+
+            mAnswer = mCorrectAnswers[mQuestionNumber];
             mQuestionNumber++;
         }
     }
@@ -110,7 +124,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void gameWin() {
         new AlertDialog.Builder(this, R.style.AppCompatAlertDialogStyle)
-                .setMessage(getString(R.string.game_win) + getString(R.string.your_score) + mScore + " " + getString(R.string.points))
+                .setMessage(getString(R.string.game_win) + getString(R.string.your_score) + " " + mScore + " " + getString(R.string.points))
                 .setCancelable(false)
                 .setNegativeButton(R.string.exit, new DialogInterface.OnClickListener() {
                     @Override
@@ -145,4 +159,6 @@ public class MainActivity extends AppCompatActivity {
         startActivity(a);
 
     }
+
+
 }
