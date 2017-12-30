@@ -12,7 +12,7 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class RadioButtonsActivity extends AppCompatActivity implements View.OnClickListener, RadioGroup.OnCheckedChangeListener {
+public class RadioButtonsActivity extends AppCompatActivity implements View.OnClickListener{
 
     int currentQuestion = 1;
     int totalNumberOfQuestions = 10;
@@ -20,14 +20,17 @@ public class RadioButtonsActivity extends AppCompatActivity implements View.OnCl
     int incorrect_score = 0;
 
     TextView question_number;
-    ImageView question_image;
     TextView ny_question;
+    TextView ny_answer;
+
+    ImageView question_image;
+
     RadioButton answer1;
     RadioButton answer2;
     RadioButton answer3;
     RadioButton answer4;
-    TextView ny_answer;
     RadioGroup radioGroup1;
+
     Button nextQuestion;
     Button shareButton;
     Button mainScreenButton;
@@ -39,12 +42,10 @@ public class RadioButtonsActivity extends AppCompatActivity implements View.OnCl
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_year_quiz);
 
-
         question_number = findViewById(R.id.question_number);
         question_image = findViewById(R.id.question_image);
         ny_question = findViewById(R.id.question);
         radioGroup1 = findViewById(R.id.radio_group1);
-        radioGroup1.setOnCheckedChangeListener(this);
 
         answer1 = findViewById(R.id.answer1);
         answer2 = findViewById(R.id.answer2);
@@ -86,13 +87,13 @@ public class RadioButtonsActivity extends AppCompatActivity implements View.OnCl
 
     public void Question3() {
         qnum = getString(R.string.questionNumber, currentQuestion, totalNumberOfQuestions);
+
         question_number.setText(qnum);
         question_image.setImageResource(R.drawable.question31img);
+
         ny_question.setText(R.string.ny_question_3);
-        answer1.setText(R.string.ny_q3_var_1);
-        answer2.setText(R.string.ny_q3_var_2);
-        answer3.setText(R.string.ny_q3_var_3);
-        answer4.setText(R.string.ny_q3_var_4);
+
+
         ny_answer.setText(R.string.ny_answer_3);
         ny_answer.setVisibility(View.INVISIBLE);
     }
@@ -160,352 +161,11 @@ public class RadioButtonsActivity extends AppCompatActivity implements View.OnCl
         answer4.setText(R.string.ny_q10_var_4);
         ny_answer.setText(R.string.ny_answer_10);
         ny_answer.setVisibility(View.INVISIBLE);
+
         nextQuestion.setText(R.string.submit_button);
         mainScreenButton.setVisibility(View.VISIBLE);
         shareButton.setVisibility(View.VISIBLE);
     }
-
-    public void onCheckedChanged(RadioGroup group, int checkedId) {
-        switch (currentQuestion) {
-            case 2:
-                switch (checkedId) {
-                    case R.id.answer1:
-                        answer1.setTextColor(getResources().getColor(R.color.wrong_answer_color));
-                        answer2.setTextColor(getResources().getColor(R.color.questions_color));
-                        answer3.setTextColor(getResources().getColor(R.color.questions_color));
-                        answer4.setTextColor(getResources().getColor(R.color.questions_color));
-
-                        answer2.setEnabled(false);
-                        answer3.setEnabled(false);
-                        answer4.setEnabled(false);
-                        ny_answer.setVisibility(View.VISIBLE);
-                        break;
-
-                    case R.id.answer2:
-                        answer2.setTextColor(getResources().getColor(R.color.wrong_answer_color));
-                        answer1.setTextColor(getResources().getColor(R.color.questions_color));
-                        answer3.setTextColor(getResources().getColor(R.color.questions_color));
-                        answer4.setTextColor(getResources().getColor(R.color.questions_color));
-                        answer1.setEnabled(false);
-                        answer3.setEnabled(false);
-                        answer4.setEnabled(false);
-                        ny_answer.setVisibility(View.VISIBLE);
-                        break;
-                    case R.id.answer3:
-                        answer3.setTextColor(getResources().getColor(R.color.correct_answer_color));
-                        answer1.setTextColor(getResources().getColor(R.color.questions_color));
-                        answer2.setTextColor(getResources().getColor(R.color.questions_color));
-                        answer4.setTextColor(getResources().getColor(R.color.questions_color));
-                        answer1.setEnabled(false);
-                        answer2.setEnabled(false);
-                        answer4.setEnabled(false);
-                        ny_answer.setVisibility(View.VISIBLE);
-                        break;
-                    case R.id.answer4:
-                        answer4.setTextColor(getResources().getColor(R.color.wrong_answer_color));
-                        answer1.setTextColor(getResources().getColor(R.color.questions_color));
-                        answer2.setTextColor(getResources().getColor(R.color.questions_color));
-                        answer3.setTextColor(getResources().getColor(R.color.questions_color));
-                        answer1.setEnabled(false);
-                        answer2.setEnabled(false);
-                        answer3.setEnabled(false);
-                        ny_answer.setVisibility(View.VISIBLE);
-                        break;
-                }
-                break;
-            case 3:
-                switch (checkedId) {
-                    case R.id.answer1:
-                        answer1.setTextColor(getResources().getColor(R.color.correct_answer_color));
-                        answer2.setTextColor(getResources().getColor(R.color.questions_color));
-                        answer3.setTextColor(getResources().getColor(R.color.questions_color));
-                        answer4.setTextColor(getResources().getColor(R.color.questions_color));
-                        answer2.setEnabled(false);
-                        answer3.setEnabled(false);
-                        answer4.setEnabled(false);
-                        ny_answer.setVisibility(View.VISIBLE);
-                        break;
-                    case R.id.answer2:
-                        answer2.setTextColor(getResources().getColor(R.color.wrong_answer_color));
-                        answer1.setTextColor(getResources().getColor(R.color.questions_color));
-                        answer3.setTextColor(getResources().getColor(R.color.questions_color));
-                        answer4.setTextColor(getResources().getColor(R.color.questions_color));
-                        answer1.setEnabled(false);
-                        answer3.setEnabled(false);
-                        answer4.setEnabled(false);
-                        ny_answer.setVisibility(View.VISIBLE);
-
-                        break;
-                    case R.id.answer3:
-                        answer3.setTextColor(getResources().getColor(R.color.wrong_answer_color));
-                        answer1.setTextColor(getResources().getColor(R.color.questions_color));
-                        answer2.setTextColor(getResources().getColor(R.color.questions_color));
-                        answer4.setTextColor(getResources().getColor(R.color.questions_color));
-                        answer1.setEnabled(false);
-                        answer2.setEnabled(false);
-                        answer4.setEnabled(false);
-                        ny_answer.setVisibility(View.VISIBLE);
-                        break;
-                    case R.id.answer4:
-                        answer4.setTextColor(getResources().getColor(R.color.wrong_answer_color));
-                        answer1.setTextColor(getResources().getColor(R.color.questions_color));
-                        answer2.setTextColor(getResources().getColor(R.color.questions_color));
-                        answer3.setTextColor(getResources().getColor(R.color.questions_color));
-                        answer1.setEnabled(false);
-                        answer2.setEnabled(false);
-                        answer3.setEnabled(false);
-                        ny_answer.setVisibility(View.VISIBLE);
-
-                        break;
-                }
-                break;
-            case 4:
-                switch (checkedId) {
-                    case R.id.answer1:
-                        answer1.setTextColor(getResources().getColor(R.color.wrong_answer_color));
-                        answer2.setTextColor(getResources().getColor(R.color.questions_color));
-                        answer3.setTextColor(getResources().getColor(R.color.questions_color));
-                        answer4.setTextColor(getResources().getColor(R.color.questions_color));
-                        answer2.setEnabled(false);
-                        answer3.setEnabled(false);
-                        answer4.setEnabled(false);
-                        ny_answer.setVisibility(View.VISIBLE);
-
-                        break;
-                    case R.id.answer2:
-                        answer2.setTextColor(getResources().getColor(R.color.wrong_answer_color));
-                        answer1.setTextColor(getResources().getColor(R.color.questions_color));
-                        answer3.setTextColor(getResources().getColor(R.color.questions_color));
-                        answer4.setTextColor(getResources().getColor(R.color.questions_color));
-                        answer1.setEnabled(false);
-                        answer3.setEnabled(false);
-                        answer4.setEnabled(false);
-                        ny_answer.setVisibility(View.VISIBLE);
-
-                        break;
-                    case R.id.answer3:
-                        answer3.setTextColor(getResources().getColor(R.color.wrong_answer_color));
-                        answer1.setTextColor(getResources().getColor(R.color.questions_color));
-                        answer2.setTextColor(getResources().getColor(R.color.questions_color));
-                        answer4.setTextColor(getResources().getColor(R.color.questions_color));
-                        answer1.setEnabled(false);
-                        answer2.setEnabled(false);
-                        answer4.setEnabled(false);
-                        ny_answer.setVisibility(View.VISIBLE);
-
-                        break;
-                    case R.id.answer4:
-                        answer4.setTextColor(getResources().getColor(R.color.correct_answer_color));
-                        answer1.setTextColor(getResources().getColor(R.color.questions_color));
-                        answer2.setTextColor(getResources().getColor(R.color.questions_color));
-                        answer3.setTextColor(getResources().getColor(R.color.questions_color));
-                        answer1.setEnabled(false);
-                        answer2.setEnabled(false);
-                        answer3.setEnabled(false);
-                        ny_answer.setVisibility(View.VISIBLE);
-
-                        break;
-                }
-                break;
-            case 5:
-                switch (checkedId) {
-                    case R.id.answer1:
-                        answer1.setTextColor(getResources().getColor(R.color.wrong_answer_color));
-                        answer2.setTextColor(getResources().getColor(R.color.questions_color));
-                        answer3.setTextColor(getResources().getColor(R.color.questions_color));
-                        answer4.setTextColor(getResources().getColor(R.color.questions_color));
-                        answer2.setEnabled(false);
-                        answer3.setEnabled(false);
-                        answer4.setEnabled(false);
-                        ny_answer.setVisibility(View.VISIBLE);
-
-                        break;
-                    case R.id.answer2:
-                        answer2.setTextColor(getResources().getColor(R.color.wrong_answer_color));
-                        answer1.setTextColor(getResources().getColor(R.color.questions_color));
-                        answer3.setTextColor(getResources().getColor(R.color.questions_color));
-                        answer4.setTextColor(getResources().getColor(R.color.questions_color));
-                        answer1.setEnabled(false);
-                        answer3.setEnabled(false);
-                        answer4.setEnabled(false);
-                        ny_answer.setVisibility(View.VISIBLE);
-
-                        break;
-                    case R.id.answer3:
-                        answer3.setTextColor(getResources().getColor(R.color.correct_answer_color));
-                        answer1.setTextColor(getResources().getColor(R.color.questions_color));
-                        answer2.setTextColor(getResources().getColor(R.color.questions_color));
-                        answer4.setTextColor(getResources().getColor(R.color.questions_color));
-                        answer1.setEnabled(false);
-                        answer2.setEnabled(false);
-                        answer4.setEnabled(false);
-                        ny_answer.setVisibility(View.VISIBLE);
-
-                        break;
-                    case R.id.answer4:
-                        answer4.setTextColor(getResources().getColor(R.color.wrong_answer_color));
-                        answer1.setTextColor(getResources().getColor(R.color.questions_color));
-                        answer2.setTextColor(getResources().getColor(R.color.questions_color));
-                        answer3.setTextColor(getResources().getColor(R.color.questions_color));
-                        answer1.setEnabled(false);
-                        answer2.setEnabled(false);
-                        answer3.setEnabled(false);
-                        ny_answer.setVisibility(View.VISIBLE);
-
-                        break;
-                }
-                break;
-            case 7:
-                switch (checkedId) {
-                    case R.id.answer1:
-                        answer1.setTextColor(getResources().getColor(R.color.wrong_answer_color));
-                        answer2.setTextColor(getResources().getColor(R.color.questions_color));
-                        answer3.setTextColor(getResources().getColor(R.color.questions_color));
-                        answer4.setTextColor(getResources().getColor(R.color.questions_color));
-                        answer2.setEnabled(false);
-                        answer3.setEnabled(false);
-                        answer4.setEnabled(false);
-                        ny_answer.setVisibility(View.VISIBLE);
-
-                        break;
-                    case R.id.answer2:
-                        answer2.setTextColor(getResources().getColor(R.color.wrong_answer_color));
-                        answer1.setTextColor(getResources().getColor(R.color.questions_color));
-                        answer3.setTextColor(getResources().getColor(R.color.questions_color));
-                        answer4.setTextColor(getResources().getColor(R.color.questions_color));
-                        answer1.setEnabled(false);
-                        answer3.setEnabled(false);
-                        answer4.setEnabled(false);
-                        ny_answer.setVisibility(View.VISIBLE);
-
-                        break;
-                    case R.id.answer3:
-                        answer3.setTextColor(getResources().getColor(R.color.wrong_answer_color));
-                        answer1.setTextColor(getResources().getColor(R.color.questions_color));
-                        answer2.setTextColor(getResources().getColor(R.color.questions_color));
-                        answer4.setTextColor(getResources().getColor(R.color.questions_color));
-                        answer1.setEnabled(false);
-                        answer2.setEnabled(false);
-                        answer4.setEnabled(false);
-                        ny_answer.setVisibility(View.VISIBLE);
-
-                        break;
-                    case R.id.answer4:
-                        answer4.setTextColor(getResources().getColor(R.color.correct_answer_color));
-                        answer1.setTextColor(getResources().getColor(R.color.questions_color));
-                        answer2.setTextColor(getResources().getColor(R.color.questions_color));
-                        answer3.setTextColor(getResources().getColor(R.color.questions_color));
-                        answer1.setEnabled(false);
-                        answer2.setEnabled(false);
-                        answer3.setEnabled(false);
-                        ny_answer.setVisibility(View.VISIBLE);
-
-                        break;
-                }
-                break;
-            case 9:
-                switch (checkedId) {
-                    case R.id.answer1:
-                        answer1.setTextColor(getResources().getColor(R.color.wrong_answer_color));
-                        answer2.setTextColor(getResources().getColor(R.color.questions_color));
-                        answer3.setTextColor(getResources().getColor(R.color.questions_color));
-                        answer4.setTextColor(getResources().getColor(R.color.questions_color));
-                        answer2.setEnabled(false);
-                        answer3.setEnabled(false);
-                        answer4.setEnabled(false);
-                        ny_answer.setVisibility(View.VISIBLE);
-
-                        break;
-                    case R.id.answer2:
-                        answer2.setTextColor(getResources().getColor(R.color.correct_answer_color));
-                        answer1.setTextColor(getResources().getColor(R.color.questions_color));
-                        answer3.setTextColor(getResources().getColor(R.color.questions_color));
-                        answer4.setTextColor(getResources().getColor(R.color.questions_color));
-                        answer1.setEnabled(false);
-                        answer3.setEnabled(false);
-                        answer4.setEnabled(false);
-                        ny_answer.setVisibility(View.VISIBLE);
-
-                        break;
-                    case R.id.answer3:
-                        answer3.setTextColor(getResources().getColor(R.color.wrong_answer_color));
-                        answer1.setTextColor(getResources().getColor(R.color.questions_color));
-                        answer2.setTextColor(getResources().getColor(R.color.questions_color));
-                        answer4.setTextColor(getResources().getColor(R.color.questions_color));
-                        answer1.setEnabled(false);
-                        answer2.setEnabled(false);
-                        answer4.setEnabled(false);
-                        ny_answer.setVisibility(View.VISIBLE);
-
-                        break;
-                    case R.id.answer4:
-                        answer4.setTextColor(getResources().getColor(R.color.wrong_answer_color));
-                        answer1.setTextColor(getResources().getColor(R.color.questions_color));
-                        answer2.setTextColor(getResources().getColor(R.color.questions_color));
-                        answer3.setTextColor(getResources().getColor(R.color.questions_color));
-                        answer1.setEnabled(false);
-                        answer2.setEnabled(false);
-                        answer3.setEnabled(false);
-                        ny_answer.setVisibility(View.VISIBLE);
-
-                        break;
-                }
-                break;
-            case 10:
-                switch (checkedId) {
-                    case R.id.answer1:
-                        answer1.setTextColor(getResources().getColor(R.color.correct_answer_color));
-                        answer2.setTextColor(getResources().getColor(R.color.questions_color));
-                        answer3.setTextColor(getResources().getColor(R.color.questions_color));
-                        answer4.setTextColor(getResources().getColor(R.color.questions_color));
-
-                        answer2.setEnabled(false);
-                        answer3.setEnabled(false);
-                        answer4.setEnabled(false);
-
-                        ny_answer.setVisibility(View.VISIBLE);
-
-                        break;
-                    case R.id.answer2:
-                        answer2.setTextColor(getResources().getColor(R.color.wrong_answer_color));
-                        answer1.setTextColor(getResources().getColor(R.color.questions_color));
-                        answer3.setTextColor(getResources().getColor(R.color.questions_color));
-                        answer4.setTextColor(getResources().getColor(R.color.questions_color));
-
-                        answer1.setEnabled(false);
-                        answer3.setEnabled(false);
-                        answer4.setEnabled(false);
-                        ny_answer.setVisibility(View.VISIBLE);
-
-                        break;
-                    case R.id.answer3:
-                        answer3.setTextColor(getResources().getColor(R.color.wrong_answer_color));
-                        answer1.setTextColor(getResources().getColor(R.color.questions_color));
-                        answer2.setTextColor(getResources().getColor(R.color.questions_color));
-                        answer4.setTextColor(getResources().getColor(R.color.questions_color));
-
-                        answer1.setEnabled(false);
-                        answer2.setEnabled(false);
-                        answer4.setEnabled(false);
-                        ny_answer.setVisibility(View.VISIBLE);
-
-                        break;
-                    case R.id.answer4:
-                        answer4.setTextColor(getResources().getColor(R.color.wrong_answer_color));
-                        answer1.setTextColor(getResources().getColor(R.color.questions_color));
-                        answer2.setTextColor(getResources().getColor(R.color.questions_color));
-                        answer3.setTextColor(getResources().getColor(R.color.questions_color));
-
-                        answer1.setEnabled(false);
-                        answer2.setEnabled(false);
-                        answer3.setEnabled(false);
-                        ny_answer.setVisibility(View.VISIBLE);
-
-                        break;
-                }
-        }
-    }
-
 
 
     public void onClick(View view) {
@@ -519,7 +179,6 @@ public class RadioButtonsActivity extends AppCompatActivity implements View.OnCl
 
         currentQuestion++;
         radioGroup1.clearCheck();
-
 
         switch (currentQuestion) {
             case 3:
@@ -542,4 +201,5 @@ public class RadioButtonsActivity extends AppCompatActivity implements View.OnCl
                 break;
         }
     }
+
 }

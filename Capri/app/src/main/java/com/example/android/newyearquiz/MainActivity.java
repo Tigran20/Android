@@ -19,7 +19,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    // This method calls NY Quiz Activity
     public void openNYQuiz(View view) {
         Intent openNYQuiz = new Intent(this, NewYearQuizActivity.class);
 

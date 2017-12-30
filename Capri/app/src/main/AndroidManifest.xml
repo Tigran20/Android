@@ -19,10 +19,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".NewYearQuizActivity" />
-        <activity android:name=".EmojiActivity" />
         <activity android:name=".RadioButtonsActivity" />
-        <activity android:name=".CheckBoxesActivity" />
-        <activity android:name=".InventionsActivity"></activity>
+
     </application>
 
 </manifest>
