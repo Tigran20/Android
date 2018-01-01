@@ -110,37 +110,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void gameOver() {
-        new AlertDialog.Builder(this, R.style.AppCompatAlertDialogStyle)
-                .setMessage(getString(R.string.game_over) + getString(R.string.your_score) + "" + mScore + " " + getString(R.string.points))
-                .setCancelable(false)
-                .setNegativeButton(R.string.exit, new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        exitFromApp();
-                    }
-                })
-                .setPositiveButton(R.string.new_game, new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface arg0, int arg1) {
-                        startActivity(new Intent(getApplicationContext(), MainActivity.class));
-                    }
-                }).create().show();
+        createAlert(getString(R.string.game_over) + getString(R.string.your_score) + "" + mScore + " " + getString(R.string.points));
     }
 
     private void gameWin() {
-        new AlertDialog.Builder(this, R.style.AppCompatAlertDialogStyle)
-                .setMessage(getString(R.string.game_win) + getString(R.string.your_score) + " " + mScore + " " + getString(R.string.points))
-                .setCancelable(false)
-                .setNegativeButton(R.string.exit, new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        exitFromApp();
-                    }
-                })
-                .setPositiveButton(R.string.new_game, new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface arg0, int arg1) {
-                        startActivity(new Intent(getApplicationContext(), MainActivity.class));
-                    }
-                }).create().show();
+        createAlert(getString(R.string.game_win) + getString(R.string.your_score) + " " + mScore + " " + getString(R.string.points));
     }
 
     @Override
@@ -164,5 +138,20 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-
+    void createAlert(String message) {
+        new AlertDialog.Builder(this, R.style.AppCompatAlertDialogStyle)
+                .setMessage(message)
+                .setCancelable(false)
+                .setNegativeButton(R.string.exit, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        exitFromApp();
+                    }
+                })
+                .setPositiveButton(R.string.new_game, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface arg0, int arg1) {
+                        startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                    }
+                }).create().show();
+    }
 }
