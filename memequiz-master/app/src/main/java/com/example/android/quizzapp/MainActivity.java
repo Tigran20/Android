@@ -55,8 +55,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 .setMessage(R.string.exitApp)
                 .setNegativeButton(R.string.no, null)
                 .setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int which) {
-                        mProgressBar.setVisibility(View.INVISIBLE);
+                    public void onClick(DialogInterface arg0, int arg1) {
                         exitFromApp();
                     }
                 }).create().show();

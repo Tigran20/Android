@@ -119,12 +119,13 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
         int i = 0, k = 0;
         Resources res = getResources();
         String[] answerCB = res.getStringArray(R.array.correctCheckBoxesArr);
-
         for (int idCB : allCheckBoxesArr) {
-            CheckBox currCheckBox = (CheckBox) findViewById(idCB);
+            CheckBox currCheckBox = findViewById(idCB);
             if (currCheckBox.isChecked()) {
                 String textCheckBox = ((CheckBox) findViewById(idCB)).getText().toString();
-                if (textCheckBox.equals(answerCB[i])) k++;
+                for (int j = 0; j < answerCB.length; j++) {
+                    if (textCheckBox.equals(answerCB[j])) k++;
+                }
             }
             i++;
         }
@@ -185,8 +186,8 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
                 .setMessage(R.string.exitQuiz)
                 .setNegativeButton(R.string.no, null)
                 .setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int which) {
-                        QuizActivity.super.onBackPressed();
+                    public void onClick(DialogInterface arg0, int arg1) {
+                        startActivity(new Intent(getApplicationContext(), MainActivity.class));
                     }
                 }).create().show();
     }
