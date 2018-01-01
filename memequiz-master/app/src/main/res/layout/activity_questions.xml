@@ -523,5 +523,6 @@
             android:id="@+id/submit"
             style="@style/submitButton"
             android:text="@string/sumbit" />
+
     </LinearLayout>
 </ScrollView>

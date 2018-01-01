@@ -59,6 +59,7 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
 
         scoreResult = findViewById(R.id.scoreResult);
         picResult = findViewById(R.id.pic_answer);
+
     }
 
     @Override

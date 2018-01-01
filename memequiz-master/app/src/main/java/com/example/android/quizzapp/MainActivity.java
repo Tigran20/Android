@@ -16,6 +16,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     public final static String EXTRA_MESSAGE = "com.example.android.quizzapp.MESSAGE";
     private ProgressBar mProgressBar;
+    private Button startButton;
+    private EditText name;
+    private Intent intent;
+    private String userName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +29,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
         mProgressBar = findViewById(R.id.pb_loading_indicator);
 
-        Button startButton = findViewById(R.id.startButton);
+        startButton = findViewById(R.id.startButton);
         startButton.setOnClickListener(this);
     }
 
@@ -33,10 +37,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(final View view) {
         if (view.getId() == R.id.startButton) {
 
-            final Intent intent = new Intent(this, QuizActivity.class);
+            intent = new Intent(this, QuizActivity.class);
 
-            EditText name = findViewById(R.id.name);
-            String userName = name.getText().toString();
+            name = findViewById(R.id.name);
+            userName = name.getText().toString();
             if (userName.isEmpty()) userName = getString(R.string.username);
 
             intent.putExtra(EXTRA_MESSAGE, userName);
@@ -53,8 +57,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 .setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
                         mProgressBar.setVisibility(View.INVISIBLE);
-                        MainActivity.super.onBackPressed();
+                        exitFromApp();
                     }
                 }).create().show();
+    }
+
+    public void exitFromApp() {
+        Intent a = new Intent(Intent.ACTION_MAIN);
+        a.addCategory(Intent.CATEGORY_HOME);
+        a.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(a);
+
     }
 }
