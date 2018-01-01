@@ -3,7 +3,6 @@ package com.example.android.quizzapp;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -16,56 +15,52 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     public final static String EXTRA_MESSAGE = "com.example.android.quizzapp.MESSAGE";
     private ProgressBar mProgressBar;
-    private Button startButton;
     private EditText name;
-    private Intent intent;
-    private String userName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        //hiding keyboard
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
-        mProgressBar = findViewById(R.id.pb_loading_indicator);
 
-        startButton = findViewById(R.id.startButton);
+        mProgressBar = findViewById(R.id.pb_loading_indicator);
+        name = findViewById(R.id.name);
+        Button startButton = findViewById(R.id.startButton);
+
         startButton.setOnClickListener(this);
     }
 
     @Override
-    public void onClick(final View view) {
-        if (view.getId() == R.id.startButton) {
+    public void onClick(View view) {
+        final Intent intent = new Intent(this, QuizActivity.class);
 
-            intent = new Intent(this, QuizActivity.class);
+        String userName = name.getText().toString();
+        if (userName.isEmpty()) userName = getString(R.string.username);
 
-            name = findViewById(R.id.name);
-            userName = name.getText().toString();
-            if (userName.isEmpty()) userName = getString(R.string.username);
-
-            intent.putExtra(EXTRA_MESSAGE, userName);
-            mProgressBar.setVisibility(View.VISIBLE);
-            startActivity(intent);
-        }
+        intent.putExtra(EXTRA_MESSAGE, userName);
+        mProgressBar.setVisibility(View.VISIBLE);
+        startActivity(intent);
     }
 
     @Override
     public void onBackPressed() {
         new AlertDialog.Builder(this)
                 .setMessage(R.string.exitApp)
+                .setCancelable(false)
                 .setNegativeButton(R.string.no, null)
                 .setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface arg0, int arg1) {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
                         exitFromApp();
                     }
                 }).create().show();
     }
 
     public void exitFromApp() {
-        Intent a = new Intent(Intent.ACTION_MAIN);
-        a.addCategory(Intent.CATEGORY_HOME);
-        a.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        startActivity(a);
-
+        Intent intent = new Intent(Intent.ACTION_MAIN);
+        intent.addCategory(Intent.CATEGORY_HOME);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
     }
 }

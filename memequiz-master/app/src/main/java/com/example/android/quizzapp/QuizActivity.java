@@ -4,14 +4,12 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.ImageView;
-import android.widget.ProgressBar;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.ScrollView;
@@ -25,8 +23,6 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
     private String userName, message;
     private ImageView picResult;
     private ScrollView getScrollView;
-
-
     /**
      * ID array for all RadioGroups
      */
@@ -59,7 +55,6 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
 
         scoreResult = findViewById(R.id.scoreResult);
         picResult = findViewById(R.id.pic_answer);
-
     }
 
     @Override
@@ -103,7 +98,7 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
         Resources res = getResources();
         String[] answerRB = res.getStringArray(R.array.correctRadioGroupsArr);
         for (int idRadioGroup : allRadioGroupsArr) {
-            RadioGroup currRadioGroup = (RadioGroup) findViewById(idRadioGroup);
+            RadioGroup currRadioGroup = findViewById(idRadioGroup);
             if (currRadioGroup.getCheckedRadioButtonId() != -1) {
                 String textRadioButton = ((RadioButton) findViewById(currRadioGroup.getCheckedRadioButtonId())).getText().toString();
                 if (textRadioButton.equals(answerRB[i])) {
@@ -137,7 +132,7 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
     //clear RadioButtons questions
     private void clearRadioAnswers() {
         for (int idRB : allRadioGroupsArr) {
-            RadioGroup currRadioGroup = (RadioGroup) findViewById(idRB);
+            RadioGroup currRadioGroup = findViewById(idRB);
             currRadioGroup.clearCheck();
         }
     }
@@ -145,7 +140,7 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
     //clear CheckBoxes questions
     private void clearCheckBoxAnswers() {
         for (int idCB : allCheckBoxesArr) {
-            CheckBox currCheckBox = (CheckBox) findViewById(idCB);
+            CheckBox currCheckBox = findViewById(idCB);
             if (currCheckBox.isChecked()) currCheckBox.setChecked(false);
         }
     }
@@ -170,7 +165,7 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
 
     //scrolls to the bottom of the screen when Submit button is pressed
     private void scrollDialogDown() {
-        getScrollView = (ScrollView) findViewById(R.id.scrollview);
+        getScrollView = findViewById(R.id.scrollview);
         getScrollView.postDelayed(new Runnable() {
             @Override
             public void run() {
@@ -179,35 +174,15 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
         }, 100);
     }
 
-    //
     @Override
     public void onBackPressed() {
         new AlertDialog.Builder(this)
                 .setMessage(R.string.exitQuiz)
                 .setNegativeButton(R.string.no, null)
                 .setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface arg0, int arg1) {
+                    public void onClick(DialogInterface dialog, int which) {
                         startActivity(new Intent(getApplicationContext(), MainActivity.class));
                     }
                 }).create().show();
     }
-
-
-/*
-    void createAlert(String message) {
-        new AlertDialog.Builder(this, R.style.AppCompatAlertDialogStyle)
-                .setMessage(message)
-                .setCancelable(false)
-                .setNegativeButton(R.string.exit, new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        exitFromApp();
-                    }
-                })
-                .setPositiveButton(R.string.new_game, new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface arg0, int arg1) {
-                        startActivity(new Intent(getApplicationContext(), MainActivity.class));
-                    }
-                }).create().show();
-    }*/
 }

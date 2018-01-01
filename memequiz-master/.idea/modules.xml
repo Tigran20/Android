@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://C:\Users\Tigran\AndroidStudioProjects\memequiz-master\QuizzApp.iml" filepath="C:\Users\Tigran\AndroidStudioProjects\memequiz-master\QuizzApp.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://C:\Users\Tigran\AndroidStudioProjects\memequiz-master\app\app.iml" filepath="C:\Users\Tigran\AndroidStudioProjects\memequiz-master\app\app.iml" />
       <module fileurl="file://$PROJECT_DIR$/memequiz-master.iml" filepath="$PROJECT_DIR$/memequiz-master.iml" />
     </modules>
   </component>
